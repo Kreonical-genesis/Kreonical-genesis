@@ -1,8 +1,7 @@
 const slides = {
   'section-builds': [
     'assets/images/build1.jpg',
-    'assets/images/build2.jpg',
-    'assets/images/build3.jpg'
+    'assets/images/build2.jpg'
   ],
   'section-rp': [
     'assets/images/rp1.jpg',
@@ -28,3 +27,28 @@ for (const [id, images] of Object.entries(slides)) {
     el.style.backgroundImage = `url('${images[i]}')`;
   }, 6000);
 }
+
+const sections = document.querySelectorAll('.section');
+
+sections.forEach(section => {
+  let animationId = null;
+  let startTime = null;
+
+  const animate = (timestamp) => {
+    if (!startTime) startTime = timestamp;
+    const progress = timestamp - startTime;
+    const offset = Math.sin(progress / 1000) * 10 + 50; // значение между 40% и 60%
+    section.style.backgroundPosition = `${offset}% center`;
+    animationId = requestAnimationFrame(animate);
+  };
+
+  section.addEventListener('mouseenter', () => {
+    startTime = null;
+    animationId = requestAnimationFrame(animate);
+  });
+
+  section.addEventListener('mouseleave', () => {
+    cancelAnimationFrame(animationId);
+    section.style.backgroundPosition = '50% center';
+  });
+});

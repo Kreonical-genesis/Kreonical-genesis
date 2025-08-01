@@ -14,8 +14,9 @@ body {
   position: relative;
   background-size: cover;
   background-position: 50% center;
-  transition: flex 0.5s ease, background-position 1s ease;
+  transition: flex 0.5s ease;
   cursor: pointer;
+  will-change: background-position;
 }
 
 .section:hover {
@@ -26,18 +27,6 @@ body {
 .section:not(:hover) {
   animation: none;
   background-position: 50% center;
-}
-
-@keyframes pan-background {
-  0% {
-    background-position: 40% center;
-  }
-  50% {
-    background-position: 60% center;
-  }
-  100% {
-    background-position: 40% center;
-  }
 }
 
 .static-center {
