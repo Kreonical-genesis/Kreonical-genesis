@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Портфолио | Kreo_gen</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script defer src="js/main.js"></script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <a href="index.html">← На главную</a>
+      <h1>Портфолио моделей</h1>
+      <input type="file" id="previewUploader" accept="image/*" />
+      <p class="hint">Загрузите превью, чтобы посмотреть, как оно будет выглядеть</p>
+    </div>
+  </header>
+  <main class="portfolio-grid" id="portfolio">
+    <div class="model-card">
+      <img src="assets/images/preview1.png" alt="Model 1" class="model-preview" />
+      <h2>Модель 1</h2>
+      <p>Краткое описание модели.</p>
+      <a href="assets/models/model1.bbmodel" download>Скачать</a>
+    </div>
+    <div class="model-card">
+      <img src="assets/images/preview2.png" alt="Model 2" class="model-preview" />
+      <h2>Модель 2</h2>
+      <p>Описание второй модели.</p>
+      <a href="assets/models/model2.bbmodel" download>Скачать</a>
+    </div>
+  </main>
+</body>
+</html>
