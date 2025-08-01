@@ -8,41 +8,23 @@
   <link rel="icon" href="favicon.ico" />
 </head>
 <body>
-  <div class="main-wrapper">
-    <!-- 1: Постройки -->
-    <a href="builds.html" class="section">
-      <img src="assets/images/builds.jpg" alt="Постройки">
-      <div class="overlay">Постройки</div>
-    </a>
-
-    <!-- 2: Ресурспаки -->
-    <a href="rp.html" class="section">
-      <img src="assets/images/resourcepacks.jpg" alt="Ресурспаки">
-      <div class="overlay">Ресурспаки</div>
-    </a>
-
-    <!-- 3: Центр - соцсети -->
-    <div class="static-section">
-      <h1>Kreo_gen</h1>
-      <p>Blockbench Artist • Minecraft Modder • Creator</p>
-      <div>
-        <a href="https://github.com/Kreonical-genesis" target="_blank">GitHub</a>
-        <a href="https://modrinth.com/user/Kreo_gen" target="_blank">Modrinth</a>
-        <a href="https://discord.com/users/692022031461646416" target="_blank">Discord</a>
+  <main class="flex-container">
+    <div class="section" id="section-builds" onclick="location.href='builds.html'"></div>
+    <div class="section" id="section-rp" onclick="location.href='rp.html'"></div>
+    <div class="section static-center">
+      <div class="center-content">
+        <h1>Kreo_gen</h1>
+        <p>Blockbench Artist • Minecraft Modder • Creator</p>
+        <div class="social-links">
+          <a href="https://github.com/Kreo-gen" target="_blank">GitHub</a>
+          <a href="https://modrinth.com/user/Kreo_gen" target="_blank">Modrinth</a>
+          <a href="https://discord.com/users/YOUR_ID" target="_blank">Discord</a>
+        </div>
       </div>
     </div>
-
-    <!-- 4: Модели -->
-    <a href="blockbench.html" class="section">
-      <img src="assets/images/blockbench.jpg" alt="Blockbench модели">
-      <div class="overlay">Модели</div>
-    </a>
-
-    <!-- 5: GitHub/код -->
-    <a href="github.html" class="section">
-      <img src="assets/images/code.jpg" alt="Программирование">
-      <div class="overlay">Программирование</div>
-    </a>
-  </div>
+    <div class="section" id="section-models" onclick="location.href='blockbench.html'"></div>
+    <div class="section" id="section-github" onclick="location.href='github.html'"></div>
+  </main>
+  <script src="js/index.js"></script>
 </body>
 </html>

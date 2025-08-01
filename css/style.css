@@ -1,69 +1,69 @@
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    html, body {
-      height: 100%;
-      overflow: hidden;
-      font-family: 'Inter', sans-serif;
-    }
-    .main-wrapper {
-      display: flex;
-      height: 100vh;
-      width: 100vw;
-    }
-    .section {
-      flex: 1;
-      overflow: hidden;
-      position: relative;
-      transition: flex 0.4s ease;
-      cursor: pointer;
-    }
-    .section:hover {
-      flex: 1.5;
-    }
-    .section img {
-      height: 100%;
-      width: auto;
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      transition: transform 0.4s ease;
-    }
-    .section:hover img {
-      transform: translateX(-50%) scale(1.05);
-    }
-    .section .overlay {
-      position: absolute;
-      bottom: 10%;
-      left: 50%;
-      transform: translateX(-50%);
-      color: white;
-      background: rgba(0, 0, 0, 0.5);
-      padding: 10px 20px;
-      border-radius: 10px;
-      text-align: center;
-      font-weight: bold;
-      pointer-events: none;
-    }
-    .static-section {
-      flex: 1;
-      background: #0d1117;
-      color: #c9d1d9;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 2rem;
-    }
-    .static-section h1 {
-      margin-bottom: 1rem;
-    }
-    .static-section a {
-      color: #58a6ff;
-      margin: 0.5rem;
-      text-decoration: none;
-      font-weight: 500;
-    }
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  overflow: hidden;
+}
+
+.flex-container {
+  display: flex;
+  height: 100vh;
+}
+
+.section {
+  flex: 1;
+  position: relative;
+  background-size: cover;
+  background-position: 50% center;
+  transition: flex 0.5s ease, background-position 1s ease;
+  cursor: pointer;
+}
+
+.section:hover {
+  flex: 1.5;
+  animation: pan-background 16s ease-in-out infinite alternate;
+}
+
+.section:not(:hover) {
+  animation: none;
+  background-position: 50% center;
+}
+
+@keyframes pan-background {
+  0% {
+    background-position: 40% center;
+  }
+  50% {
+    background-position: 60% center;
+  }
+  100% {
+    background-position: 40% center;
+  }
+}
+
+.static-center {
+  flex: 1;
+  background: #0d1117;
+  color: #c9d1d9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  cursor: default;
+  transition: none;
+}
+
+.static-center:hover {
+  flex: 1;
+}
+
+.center-content {
+  max-width: 300px;
+}
+
+.social-links a {
+  display: inline-block;
+  margin: 0.5rem;
+  color: #58a6ff;
+  text-decoration: none;
+  font-weight: 500;
+}
