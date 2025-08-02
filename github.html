@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Программирование</title>
+  <link rel="stylesheet" href="css/page.css" />
+</head>
+<body class="bg-code">
+  <header class="nav-bar">
+    <nav>
+      <button onclick="location.href='builds.html'">Постройки</button>
+      <button onclick="location.href='rp.html'">Ресурспаки</button>
+      <button onclick="location.href='index.html'">Главная</button>
+      <button onclick="location.href='blockbench.html'">Модели</button>
+      <button onclick="location.href='github.html'">Код</button>
+    </nav>
+  </header>
+  <main class="grid">
+    <!-- Плитки -->
+    <div class="tile">
+      <div class="tile-title">Название</div>
+      <div class="tile-image" style="background-image: url('assets/images/code/1.jpg');"></div>
+      <div class="tile-desc">
+        <button class="toggle-desc">Показать описание</button>
+        <div class="desc-content">Описание плитки. Здесь можно рассказать подробности о проекте, модели и т.д.</div>
+      </div>
+    </div>
+    <div class="tile">
+      <div class="tile-title">Название 2</div>
+      <div class="tile-image" style="background-image: url('assets/images/code/2.jpg');"></div>
+      <div class="tile-desc">
+        <button class="toggle-desc">Показать описание</button>
+        <div class="desc-content">Описание второй плитки.</div>
+      </div>
+    </div>
+  </main>
+  <script src="js/page.js"></script>
+</body>
+</html>

@@ -58,6 +58,28 @@ body {
   font-weight: 500;
 }
 
+.label {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  color: white;
+  font-size: 0.85rem;
+  font-weight: 500;
+  pointer-events: none;
+  user-select: none;
+  z-index: 1;
+}
+
+.label span {
+  font-size: 1rem;
+}
+
 /* ✅ Адаптивная мобильная раскладка: 1|4, 2|5, центр */
 @media (max-width: 860px) {
   .main-container {

@@ -1,0 +1,93 @@
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: #000;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+.nav-bar {
+  background: rgba(0,0,0,0.8);
+  padding: 1rem;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.nav-bar button {
+  background: transparent;
+  border: none;
+  color: #ccc;
+  font-size: 1rem;
+  margin: 0 1rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.nav-bar button:hover {
+  color: white;
+  transform: scale(1.1);
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+  padding: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.tile {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.tile:hover {
+  transform: scale(1.02);
+}
+
+.tile-title {
+  font-weight: bold;
+  font-size: 1.1rem;
+  padding: 0.5rem 1rem;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.tile-image {
+  height: 180px;
+  background-size: cover;
+  background-position: center;
+  transition: background-position 8s ease-in-out infinite alternate;
+  animation: pan-bg 16s ease-in-out infinite alternate;
+}
+
+@keyframes pan-bg {
+  0%   { background-position: 50% 50%; }
+  100% { background-position: 60% 50%; }
+}
+
+.tile-desc {
+  padding: 0.5rem 1rem 1rem;
+}
+
+.desc-content {
+  margin-top: 0.5rem;
+  display: none;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.toggle-desc {
+  background: #222;
+  color: white;
+  border: none;
+  padding: 0.3rem 0.6rem;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 0.85rem;
+}
