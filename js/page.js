@@ -20,7 +20,7 @@ const images = {
     'assets/images/builds/2.jpg',
     'assets/images/builds/3.jpg'
   ],
-  'bg-rp': [
+  'bg-rps': [
     'assets/images/rp/1.jpg',
     'assets/images/rp/2.jpg',
     'assets/images/rp/3.jpg'
@@ -30,7 +30,7 @@ const images = {
     'assets/images/models/2.jpg',
     'assets/images/models/3.jpg'
   ],
-  'bg-code': [
+  'bg-codes': [
     'assets/images/code/1.jpg',
     'assets/images/code/2.jpg',
     'assets/images/code/3.jpg'
