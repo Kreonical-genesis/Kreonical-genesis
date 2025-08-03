@@ -5,85 +5,105 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kreo_gen | Постройки</title>
   <link rel="stylesheet" href="css/page.css" />
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body class="bg-builds">
-  <header class="nav-bar">
-    <nav>
-      <button onclick="location.href='builds.html'">Постройки</button>
-      <button onclick="location.href='rp.html'">Ресурспаки</button>
-      <button onclick="location.href='index.html'">Главная</button>
-      <button onclick="location.href='blockbench.html'">Модели</button>
-      <button onclick="location.href='github.html'">Программирование</button>
+
+  <!-- Навигационная панель -->
+  <header>
+    <nav class="nav-bar">
+      <button class="nav-button" data-target="builds.html" data-page="true">
+        <span class="nav-icon" style="background-image: url('assets/icons/builds.png');"></span>Постройки
+      </button>
+      <button class="nav-button" data-target="rp.html">
+        <span class="nav-icon" style="background-image: url('assets/icons/rp.png');"></span>Ресурспаки
+      </button>
+      <button class="nav-button" data-target="index.html">
+        <span class="nav-icon" style="background-image: url('assets/icons/home.png');"></span>Главная
+      </button>
+      <button class="nav-button" data-target="blockbench.html">
+        <span class="nav-icon" style="background-image: url('assets/icons/models.png');"></span>Модели
+      </button>
+      <button class="nav-button" data-target="github.html">
+        <span class="nav-icon" style="background-image: url('assets/icons/code.png');"></span>Программирование
+      </button>
     </nav>
   </header>
+
+  <!-- Фоновая карусель -->
   <div class="background-slideshow"></div>
+
+  <!-- Основной контент -->
   <main class="grid">
-    <!-- Плитки -->
-    <div class="tile">
-      <div class="tile-title">Название</div>
+    <!-- Карточка постройки -->
+    <div class="tile" data-desc="descriptions/build1.md">
+      <div class="tile-title">Название 1</div>
       <div class="tile-image" style="background-image: url('assets/images/builds/1.jpg');"></div>
       <div class="tile-desc">
-        <button class="toggle-desc">Показать описание</button>
-        <div class="desc-content">Здесь будет круто описание</div>
+        <div class="desc-content">Загрузка описания...</div>
       </div>
     </div>
-    <div class="tile">
+
+    <!-- Дублируемая структура карточек -->
+    <div class="tile" data-desc="descriptions/build2.md">
       <div class="tile-title">Название 2</div>
       <div class="tile-image" style="background-image: url('assets/images/builds/2.jpg');"></div>
       <div class="tile-desc">
-        <button class="toggle-desc">Показать описание</button>
-        <div class="desc-content">Здесь будет круто описание</div>
+        <div class="desc-content">Загрузка описания...</div>
       </div>
     </div>
-    <div class="tile">
-      <div class="tile-title">Название 2</div>
+
+    <div class="tile" data-desc="descriptions/build3.md">
+      <div class="tile-title">Название 3</div>
       <div class="tile-image" style="background-image: url('assets/images/builds/3.jpg');"></div>
       <div class="tile-desc">
-        <button class="toggle-desc">Показать описание</button>
-        <div class="desc-content">Здесь будет круто описание</div>
+        <div class="desc-content">Загрузка описания...</div>
       </div>
     </div>
-    <div class="tile">
-      <div class="tile-title">Название 2</div>
+
+    <div class="tile" data-desc="descriptions/build4.md">
+      <div class="tile-title">Название 4</div>
       <div class="tile-image" style="background-image: url('assets/images/builds/4.jpg');"></div>
       <div class="tile-desc">
-        <button class="toggle-desc">Показать описание</button>
-        <div class="desc-content">Здесь будет круто описание</div>
-      </div>
-    </div>
-    <div class="tile">
-      <div class="tile-title">Название</div>
-      <div class="tile-image" style="background-image: url('assets/images/builds/5.jpg');"></div>
-      <div class="tile-desc">
-        <button class="toggle-desc">Показать описание</button>
-        <div class="desc-content">Здесь будет круто описание</div>
-      </div>
-    </div>
-    <div class="tile">
-      <div class="tile-title">Название 2</div>
-      <div class="tile-image" style="background-image: url('assets/images/builds/6.jpg');"></div>
-      <div class="tile-desc">
-        <button class="toggle-desc">Показать описание</button>
-        <div class="desc-content">Здесь будет круто описание</div>
-      </div>
-    </div>
-    <div class="tile">
-      <div class="tile-title">Название 2</div>
-      <div class="tile-image" style="background-image: url('assets/images/builds/7.jpg');"></div>
-      <div class="tile-desc">
-        <button class="toggle-desc">Показать описание</button>
-        <div class="desc-content">Здесь будет круто описание</div>
-      </div>
-    </div>
-    <div class="tile">
-      <div class="tile-title">Название 2</div>
-      <div class="tile-image" style="background-image: url('assets/images/builds/8.jpg');"></div>
-      <div class="tile-desc">
-        <button class="toggle-desc">Показать описание</button>
-        <div class="desc-content">Здесь будет круто описание</div>
+        <div class="desc-content">Загрузка описания...</div>
       </div>
     </div>
   </main>
+
+<!-- Футер -->
+<footer class="minecraft-footer">
+  <div class="footer-content">
+    <div class="footer-section server-info">
+      <h3 class="footer-title">позже буду заполнять</h3>
+      <p>Может быть позже буду заполнять</p>
+      <p><span class="status-dot"></span>тут тоже что-то будет</p>
+    </div>
+    <div class="footer-section">
+      <h3 class="footer-title">Навигация</h3>
+      <ul class="footer-links">
+        <li><a href="index.html">Главная</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h3 class="footer-title">Связь</h3>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-discord"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="#"><i class="fab fa-github"></i></a>
+      </div>
+    </div>
+    <div class="footer-section">
+      <h3 class="footer-title">Разработчик</h3>
+      <p>Kreonical_genesis</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2025 Kreonical-genesis | Все права может быть будут защищены.
+  </div>
+</footer>
+
+  <!-- Скрипты -->
   <script src="js/page.js"></script>
+  <script src="js/pixel_nav.js"></script>
 </body>
 </html>

@@ -1,188 +1,24 @@
-
+/* === Общие стили === */
 body {
   margin: 0;
-  font-family: 'Inter', sans-serif;
-  background: #000;
-  color: #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #f4f4f4;
+  background-color: #0b0f12;
   overflow-x: hidden;
 }
 
-.nav-bar {
-  background: rgba(0,0,0,0.8);
-  padding: 1rem;
-  text-align: center;
-  position: sticky;
-  top: 0;
-  z-index: 10;
-}
-
-.nav-bar button {
-  background: transparent;
-  border: none;
-  color: #ccc;
-  font-size: 1rem;
-  margin: 0 1rem;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  transition: color 0.3s, transform 0.3s;
-}
-
-.nav-bar button:hover {
-  color: white;
-  transform: scale(1.1);
-}
-
-.grid {
+main.grid {
   display: grid;
-  gap: 1rem;
-  padding: 2rem;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  padding: 40px;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
-.tile {
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(8px);
-  border-radius: 12px;
-  overflow: hidden;
-  transition: transform 0.3s ease;
-}
-
-.tile:hover {
-  transform: scale(1.02);
-}
-
-.tile-title {
-  font-weight: bold;
-  font-size: 1.1rem;
-  padding: 0.5rem 1rem;
-  background: rgba(0, 0, 0, 0.4);
-}
-
-.tile-image {
-  height: 180px;
-  background-size: cover;
-  background-position: center;
-  transition: background-position 8s ease-in-out infinite alternate;
-  animation: pan-bg 16s ease-in-out infinite alternate;
-}
-
-@keyframes pan-bg {
-  0%   { background-position: 50% 50%; }
-  100% { background-position: 60% 50%; }
-}
-
-.tile-desc {
-  padding: 0.5rem 1rem 1rem;
-}
-
-.desc-content {
-  margin-top: 0.5rem;
-  display: none;
-  font-size: 0.9rem;
-  line-height: 1.4;
-}
-
-.toggle-desc {
-  background: #222;
-  color: white;
-  border: none;
-  padding: 0.3rem 0.6rem;
-  cursor: pointer;
-  border-radius: 6px;
-  font-size: 0.85rem;
-}
-
-body.bg-rp::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  z-index: -1;
-  filter: blur(20px) brightness(0.4);
-  animation: slideShowRp 24s infinite ease-in-out;
-}
-
-@keyframes slideShowRp {
-  0%   { background-image: url('../assets/images/rp/1.jpg'); }
-  33%  { background-image: url('../assets/images/rp/2.jpg'); }
-  66%  { background-image: url('../assets/images/rp/3.jpg'); }
-  100% { background-image: url('../assets/images/rp/1.jpg'); }
-}
-
-body.bg-models::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  z-index: -1;
-  filter: blur(20px) brightness(0.4);
-  animation: slideShowModels 24s infinite ease-in-out;
-}
-
-@keyframes slideShowModels {
-  0%   { background-image: url('../assets/images/models/1.jpg'); }
-  33%  { background-image: url('../assets/images/models/2.jpg'); }
-  66%  { background-image: url('../assets/images/models/3.jpg'); }
-  100% { background-image: url('../assets/images/models/1.jpg'); }
-}
-
-body.bg-code::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  z-index: -1;
-  filter: blur(20px) brightness(0.4);
-  animation: slideShowCode 24s infinite ease-in-out;
-}
-
-@keyframes slideShowCode {
-  0%   { background-image: url('../assets/images/code/1.jpg'); }
-  33%  { background-image: url('../assets/images/code/2.jpg'); }
-  66%  { background-image: url('../assets/images/code/3.jpg'); }
-  100% { background-image: url('../assets/images/code/1.jpg'); }
-}
-
-body.bg-builds::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  z-index: -1;
-  filter: blur(20px) brightness(0.4);
-  animation: slideShowBuilds 24s infinite ease-in-out;
-}
-
-@keyframes slideShowBuilds {
-  0%   { background-image: url('../assets/images/builds/1.jpg'); }
-  33%  { background-image: url('../assets/images/builds/2.jpg'); }
-  66%  { background-image: url('../assets/images/builds/3.jpg'); }
-  100% { background-image: url('../assets/images/builds/1.jpg'); }
-}
 .background-slideshow {
   position: fixed;
-  top: 0;
-  left: 0;
+  top: 0; left: 0;
   width: 100%;
   height: 100%;
   background-size: cover;
@@ -191,4 +27,214 @@ body.bg-builds::before {
   filter: blur(20px) brightness(0.4);
   z-index: -1;
   transition: background-image 1.5s ease-in-out;
+}
+
+/* === Навигация === */
+.nav-bar {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  padding: 14px 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  z-index: 100;
+}
+
+.nav-button {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  padding: 8px 16px;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+  border-radius: 10px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.nav-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: scale(1.03);
+}
+
+.nav-icon {
+  width: 18px;
+  height: 18px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/* === Плитки === */
+.tile {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 0 12px rgba(0, 255, 128, 0.2);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.tile::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  border-radius: inherit;
+  padding: 2px;
+  background: linear-gradient(135deg, #00ffcc, #0099ff, #ffffff);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.tile-title {
+  padding: 10px 16px 4px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.tile-image {
+  width: 100%;
+  height: 180px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  margin: 8px 0;
+}
+
+.tile-desc {
+  padding: 0 16px 16px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #c9c9c9;
+}
+
+/* === Pixel Line === */
+.pixel-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.pixel {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background-color: rgba(0, 255, 128, 0.5);
+  opacity: 0.8;
+  border-radius: 2px;
+  filter: drop-shadow(0 0 4px #00ffcc);
+}
+
+/* === Футер === */
+.minecraft-footer {
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  padding: 40px 20px 20px;
+  color: #ccc;
+  font-size: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  margin-top: 40px;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto 20px;
+}
+
+.footer-section {
+  flex: 1 1 200px;
+  min-width: 180px;
+}
+
+.footer-title {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 6px;
+}
+
+.footer-links a {
+  color: #aaa;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover {
+  color: #fff;
+}
+
+.social-icons a {
+  margin-right: 10px;
+  color: #aaa;
+  font-size: 18px;
+  transition: color 0.2s;
+}
+
+.social-icons a:hover {
+  color: #fff;
+}
+
+.creater-icons a img {
+  width: 32px;
+  height: 32px;
+  margin-right: 6px;
+  border-radius: 6px;
+  transition: transform 0.2s;
+}
+
+.creater-icons a img:hover {
+  transform: scale(1.1);
+}
+
+.status-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: #00ff80;
+  border-radius: 50%;
+  margin-right: 6px;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  color: #666;
+  font-size: 12px;
+}
+
+/* === Адаптивность === */
+@media screen and (min-width: 1280px) {
+  main.grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
