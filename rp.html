@@ -1,109 +1,126 @@
 <!DOCTYPE html>
+
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kreo_gen | Ресурспаки</title>
-  <link rel="stylesheet" href="css/page.css" />
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kreo_gen | Ресурспаки</title>
+<link href="css/page.css" rel="stylesheet"/>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body class="bg-rps">
-
-  <!-- Навигационная панель -->
-  <header>
-    <nav class="nav-bar">
-      <button class="nav-button" data-target="builds.html">
-        <span class="nav-icon" style="background-image: url('assets/icons/build.png');"></span>Постройки
+<!-- Навигационная панель -->
+<header>
+<nav class="nav-bar">
+<button class="nav-button" data-target="builds.html">
+<span class="nav-icon" style="background-image: url('assets/icons/build.png');"></span>Постройки
       </button>
-      <button class="nav-button" data-target="rp.html" data-page="true">
-        <span class="nav-icon" style="background-image: url('assets/icons/rp.png');"></span>Ресурспаки
+<button class="nav-button" data-page="true" data-target="rp.html">
+<span class="nav-icon" style="background-image: url('assets/icons/rp.png');"></span>Ресурспаки
       </button>
-      <button class="nav-button" data-target="index.html">
-        <span class="nav-icon" style="background-image: url('assets/icons/home.png');"></span>Главная
+<button class="nav-button" data-target="index.html">
+<span class="nav-icon" style="background-image: url('assets/icons/home.png');"></span>Главная
       </button>
-      <button class="nav-button" data-target="blockbench.html">
-        <span class="nav-icon" style="background-image: url('assets/icons/models.png');"></span>Модели
+<button class="nav-button" data-target="blockbench.html">
+<span class="nav-icon" style="background-image: url('assets/icons/models.png');"></span>Модели
       </button>
-      <button class="nav-button" data-target="github.html">
-        <span class="nav-icon" style="background-image: url('assets/icons/code.png');"></span>Программирование
+<button class="nav-button" data-target="github.html">
+<span class="nav-icon" style="background-image: url('assets/icons/code.png');"></span>Программирование
       </button>
-    </nav>
-  </header>
-
-  <!-- Фоновая карусель -->
-  <div class="background-slideshow"></div>
-
-  <!-- Основной контент -->
-  <main class="grid">
-    <!-- Карточка постройки -->
-    <div class="tile" data-desc="descriptions/rp1.md">
-      <div class="tile-title">Название 1</div>
-      <div class="tile-image" style="background-image: url('assets/images/rps/1.jpg');"></div>
-      <div class="tile-desc">
-        <div class="desc-content">Загрузка описания...</div>
-      </div>
-    </div>
-
-    <!-- Дублируемая структура карточек -->
-    <div class="tile" data-desc="descriptions/rp2.md">
-      <div class="tile-title">Название 2</div>
-      <div class="tile-image" style="background-image: url('assets/images/rps/2.jpg');"></div>
-      <div class="tile-desc">
-        <div class="desc-content">Загрузка описания...</div>
-      </div>
-    </div>
-
-    <div class="tile" data-desc="descriptions/rp3.md">
-      <div class="tile-title">Название 3</div>
-      <div class="tile-image" style="background-image: url('assets/images/rps/3.jpg');"></div>
-      <div class="tile-desc">
-        <div class="desc-content">Загрузка описания...</div>
-      </div>
-    </div>
-
-    <div class="tile" data-desc="descriptions/rp4.md">
-      <div class="tile-title">Название 4</div>
-      <div class="tile-image" style="background-image: url('assets/images/rps/4.jpg');"></div>
-      <div class="tile-desc">
-        <div class="desc-content">Загрузка описания...</div>
-      </div>
-    </div>
-  </main>
-
+</nav>
+</header>
+<!-- Фоновая карусель -->
+<div class="background-slideshow"></div>
+<!-- Основной контент -->
+<main class="grid">
+<!-- Карточка ресурспака -->
+<div class="tile" data-modrinth-id="chill_totems">
+<div class="tile-image" style="background-image: url('https://cdn.modrinth.com/data/NpSJWxPg/a21e34b616641873b3848859c0acfc2fc2ea8d60.png');"></div>
+<div class="tile-title">Chill_Totems</div>
+<div class="tile-desc">Русский:
+Ресурс Пак для сервера MineChill,
+тотемы и прочее.
+English:
+Resource Pack for server MineChill,
+totems etc....</div>
+<div class="tile-author">Kreo_gen, Sernor7777</div>
+</div>
+<div class="tile" data-modrinth-id="fox_inventory">
+<div class="tile-image" style="background-image: url('https://cdn.modrinth.com/data/Ajj2IL33/ec1f9bd339cecd3110ea08c394fb3015ec1ee3eb.png');"></div>
+<div class="tile-title">Fox_Inventory</div>
+<div class="tile-desc">🦊 Turn your GUI into a cozy taiga with foxes! Themed containers and sweet berries as hunger icons....</div>
+<div class="tile-author">Kreo_gen</div>
+</div>
+<div class="tile" data-modrinth-id="3d-armor-trims">
+<div class="tile-image" style="background-image: url('https://cdn.modrinth.com/data/26N7ArSE/d545af3779781a06b2caf12ea5da6aa837f9b268_96.webp');"></div>
+<div class="tile-title">3d armor trims</div>
+<div class="tile-desc">A resource pack that lets you place 3D armor trim templates on walls and floors. Just rename the item and place it in an item frame....</div>
+<div class="tile-author">Kreo_gen</div>
+</div>
+<div class="tile" data-modrinth-id="my-totem-doll-model-pack">
+<div class="tile-image" style="background-image: url('https://cdn.modrinth.com/data/zOA5Rwjm/49dfd2482339f515a21c1c370adc624a8693c399_96.webp');"></div>
+<div class="tile-title">My Totem Doll Model pack</div>
+<div class="tile-desc">Mytotemdoll Models Pack adds 44 unique models to modify totems, supports any skins and types of hands, and also allows you to configure elements such as raincoat and elitras. Easily choose and customi...</div>
+<div class="tile-author">Kreo_gen, ALGER, Fostik, MuralovTY</div>
+</div>
+<div class="tile" data-modrinth-id="xaero-locale">
+<div class="tile-image" style="background-image: url('https://cdn.modrinth.com/data/cLalsYq0/804bf1b376341f8177811586f69a95c272d8af0d_96.webp');"></div>
+<div class="tile-title">xaero locale</div>
+<div class="tile-desc">This resource pack adds full Russian localization for Xaero's World Map, making the map and its settings more accessible for Russian-speaking players....</div>
+<div class="tile-author">Kreo_gen</div>
+</div>
+<div class="tile" data-modrinth-id="chess">
+<div class="tile-image" style="background-image: url('https://cdn.modrinth.com/data/rbFkKwm2/8683f02d919ad8fd8ba54085c61dae804fe67d56_96.webp');"></div>
+<div class="tile-title">Chess</div>
+<div class="tile-desc">Resource pack for 3d chess in minecraft, to use them you must rename the white or black dye to the desired name in the anvil and put it in a frame...</div>
+<div class="tile-author">Kreo_gen</div>
+</div>
+<div class="tile" data-modrinth-id="necocraft-totems">
+<div class="tile-image" style="background-image: url('https://cdn.modrinth.com/data/SwqgQWHf/3ef2532e8326dfadba846d66ea8be3fcc4a84438.png');"></div>
+<div class="tile-title">NecoCraft Totems</div>
+<div class="tile-desc">Resoursepack for server NecoCraft in RP...</div>
+<div class="tile-author">Kreo_gen</div>
+</div>
+<div class="tile" data-modrinth-id="destroy-item-white-list">
+<div class="tile-image" style="background-image: url('https://cdn.modrinth.com/data/HNjA8zib/62fcc3c147aa24882b9e35d5e0b185836dfe46ab_96.webp');"></div>
+<div class="tile-title">Destroy Item White List (DIWL)</div>
+<div class="tile-desc">Prevents your selected items from being removed via "Destroy Item"...</div>
+<div class="tile-author">Kreo_gen, danrus110</div>
+</div>
+</main>
 <!-- Футер -->
 <footer class="minecraft-footer">
-  <div class="footer-content">
-    <div class="footer-section server-info">
-      <h3 class="footer-title">позже буду заполнять</h3>
-      <p>Может быть позже буду заполнять</p>
-      <p><span class="status-dot"></span>тут тоже что-то будет</p>
-    </div>
-    <div class="footer-section">
-      <h3 class="footer-title">Навигация</h3>
-      <ul class="footer-links">
-        <li><a href="index.html">Главная</a></li>
-      </ul>
-    </div>
-    <div class="footer-section">
-      <h3 class="footer-title">Связь</h3>
-      <div class="social-icons">
-        <a href="#"><i class="fab fa-discord"></i></a>
-        <a href="#"><i class="fab fa-youtube"></i></a>
-        <a href="#"><i class="fab fa-github"></i></a>
-      </div>
-    </div>
-    <div class="footer-section">
-      <h3 class="footer-title">Разработчик</h3>
-      <p>Kreonical_genesis</p>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    &copy; 2025 Kreonical-genesis | Все права может быть будут защищены.
+<div class="footer-content">
+<div class="footer-section server-info">
+<h3 class="footer-title">позже буду заполнять</h3>
+<p>Может быть позже буду заполнять</p>
+<p><span class="status-dot"></span>тут тоже что-то будет</p>
+</div>
+<div class="footer-section">
+<h3 class="footer-title">Навигация</h3>
+<ul class="footer-links">
+<li><a href="index.html">Главная</a></li>
+</ul>
+</div>
+<div class="footer-section">
+<h3 class="footer-title">Связь</h3>
+<div class="social-icons">
+<a href="#"><i class="fab fa-discord"></i></a>
+<a href="#"><i class="fab fa-youtube"></i></a>
+<a href="#"><i class="fab fa-github"></i></a>
+</div>
+</div>
+<div class="footer-section">
+<h3 class="footer-title">Разработчик</h3>
+<p>Kreonical_genesis</p>
+</div>
+</div>
+<div class="footer-bottom">
+    © 2025 Kreonical-genesis | Все права может быть будут защищены.
   </div>
 </footer>
-
-  <!-- Скрипты -->
-  <script src="js/page.js"></script>
-  <script src="js/pixel_nav.js"></script>
+<!-- Скрипты -->
+<script src="js/page.js"></script>
+<script src="js/pixel_nav.js"></script>
 </body>
 </html>
