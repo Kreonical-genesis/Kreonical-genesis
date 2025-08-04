@@ -61,8 +61,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const delay = Math.random() * 200;
 
       pixel.animate([
-        { transform: `translate(${randXStart}px, ${randYStart}px)` },
-        { transform: `translate(${randXEnd}px, ${randYEnd}px)` }
+          { transform: `translate(${randXStart}px, ${randYStart}px)` },
+          { transform: `translate(${randXEnd}px, ${randYEnd}px)` }
       ], {
         duration,
         delay,
@@ -90,4 +90,8 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 1200);
     });
   });
+  window.addEventListener('resize', () => {
+  activeArea = getButtonArea(activeButton);
+  setInitialPixelPositions(activeArea);
+});
 });

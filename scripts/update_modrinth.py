@@ -46,8 +46,8 @@ for tile in tiles:
     # Обновляем содержимое плитки
     title_el = tile.select_one(".tile-title")
     desc_el = tile.select_one(".tile-desc")
-    author_el = tile.select_one(".tigle-author")
-    image_el = tile.select_one(".tile-imae")
+    author_el = tile.select_one(".tile-author")
+    image_el = tile.select_one(".tile-image")
 
     if title_el:
         title_el.string = data.get("title", "Без названия")

@@ -1,19 +1,23 @@
 const slides = {
   'section-builds': [
-    'assets/images/build1.jpg',
-    'assets/images/build2.jpg'
+    'assets/images/builds/1.jpg',
+    'assets/images/builds/2.jpg',
+    'assets/images/builds/3.jpg'
   ],
   'section-rp': [
-    'assets/images/rp1.jpg',
-    'assets/images/rp2.jpg'
+    'assets/images/rps/1.jpg',
+    'assets/images/rps/2.jpg',
+    'assets/images/rps/3.jpg'
   ],
   'section-models': [
-    'assets/images/model1.jpg',
-    'assets/images/model2.jpg'
+    'assets/images/models/1.jpg',
+    'assets/images/models/2.jpg',
+    'assets/images/models/3.jpg'
   ],
   'section-github': [
-    'assets/images/code1.jpg',
-    'assets/images/code2.jpg'
+    'assets/images/codes/1.jpg',
+    'assets/images/codes/2.jpg',
+    'assets/images/codes/3.jpg'
   ]
 };
 

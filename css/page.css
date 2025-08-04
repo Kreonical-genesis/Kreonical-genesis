@@ -32,6 +32,7 @@ main.grid {
 /* === Навигация === */
 .nav-bar {
   position: relative;
+  z-index: 2;
   display: flex;
   justify-content: center;
   gap: 12px;
@@ -39,6 +40,14 @@ main.grid {
   background-color: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(10px);
   z-index: 100;
+  color: #ffffff;
+  text-shadow: 0 0 4px #00ffcc, 0 0 8px #00ffcc;
+  font-weight: bold;
+}
+
+.nav-button[data-page="true"] {
+  border: 1px solid #00ffaa;
+  background: rgba(0, 255, 170, 0.15);
 }
 
 .nav-button {
@@ -49,6 +58,7 @@ main.grid {
   font-weight: 500;
   cursor: pointer;
   position: relative;
+  z-index: 3;
   border-radius: 10px;
   font-size: 14px;
   display: flex;
@@ -128,7 +138,7 @@ main.grid {
   width: 100%;
   height: 100%;
   pointer-events: none;
-  z-index: 5;
+  z-index: 0;
 }
 
 .pixel {
@@ -232,9 +242,96 @@ main.grid {
   font-size: 12px;
 }
 
+.tile {
+  display: block;
+  padding: 16px;
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+.tile-content {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.tile-left {
+  flex: 0 0 120px;
+}
+
+.tile-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 12px;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 0 8px rgba(0, 255, 128, 0.3);
+}
+
+.tile-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tile-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.tile-desc {
+  font-size: 14px;
+  color: #c9c9c9;
+  line-height: 1.6;
+}
+
+.tile-link {
+  align-self: start;
+  margin-top: 4px;
+  background: rgba(0, 255, 170, 0.1);
+  border: 1px solid #00ffaa;
+  border-radius: 6px;
+  padding: 6px 12px;
+  color: #00ffcc;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 13px;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.tile-link:hover {
+  background: rgba(0, 255, 170, 0.2);
+  transform: scale(1.02);
+}
+
+.tile-authors {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.author {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 4px 10px;
+  font-size: 13px;
+  color: #99ffdd;
+  border: 1px solid rgba(0, 255, 170, 0.2);
+  transition: background 0.2s;
+}
+
+.author:hover {
+  background: rgba(0, 255, 170, 0.1);
+}
+
+
 /* === Адаптивность === */
 @media screen and (min-width: 1280px) {
   main.grid {
     grid-template-columns: repeat(4, 1fr);
   }
 }
+
