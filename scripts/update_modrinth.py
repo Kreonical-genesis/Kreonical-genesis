@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 from pathlib import Path
 
-# Путь к rp.html
+# Путь к rp.html (на уровень выше папки scripts)
 html_path = Path(__file__).parent.parent / "rp.html"
 
 # Загрузка HTML
@@ -27,27 +27,23 @@ for tile in tiles:
     team_res = requests.get(f"https://api.modrinth.com/v2/project/{modrinth_id}/members")
     if team_res.status_code == 200:
         team_data = team_res.json()
-        # Собираем всех авторов по username
         preferred_author = "Kreo_gen"
 
-        authors = [member.get("user", {}).get("username") for member in team_data if member.get("user")]
-        authors = [name for name in authors if name]  # Убираем пустые
+        authors = [m.get("user", {}).get("username") for m in team_data if m.get("user")]
+        authors = [a for a in authors if a]
 
-        # Переносим preferred_author в начало, если он есть
         if preferred_author in authors:
             authors.remove(preferred_author)
             authors.insert(0, preferred_author)
-
-        author_string = ", ".join(authors) if authors else "Неизвестные авторы"
-
     else:
-        author_string = data.get("author", "Неизвестные авторы")
+        authors = [data.get("author", "Неизвестный автор")]
 
-    # Обновляем содержимое плитки
+    # Обновляем содержимое
     title_el = tile.select_one(".tile-title")
-    desc_el = tile.select_one(".tile-desc")
-    author_el = tile.select_one(".tile-author")
+    desc_el = tile.select_one(".tile-desc p")
     image_el = tile.select_one(".tile-image")
+    link_el = tile.select_one(".tile-link")
+    authors_container = tile.select_one(".tile-authors")
 
     if title_el:
         title_el.string = data.get("title", "Без названия")
@@ -55,17 +51,27 @@ for tile in tiles:
     if desc_el:
         desc_el.string = data.get("description", "Без описания")[:200] + "..."
 
-    if author_el:
-        author_el.string = author_string
-
     if image_el:
         icon_url = data.get("icon_url")
         if icon_url:
-            image_el["style"] = f"background-image: url('{icon_url}');"
+            image_el["style"] = (
+                f"background-image: url('{icon_url}'); "
+                f"background-size: cover; background-position: center;"
+            )
 
-    print(f"✅ Обновлено: {data.get('title')} (авторы: {author_string})")
+    if link_el:
+        link_el["href"] = f"https://modrinth.com/resourcepack/{modrinth_id}"
 
-# Сохраняем HTML обратно
+    if authors_container:
+        authors_container.clear()
+        for name in authors:
+            author_span = soup.new_tag("span", **{"class": "author"})
+            author_span.string = name
+            authors_container.append(author_span)
+
+    print(f"✅ Обновлено: {data.get('title')} (авторы: {', '.join(authors)})")
+
+# Сохраняем обновлённый HTML
 with open(html_path, "w", encoding="utf-8") as file:
     file.write(str(soup))
 

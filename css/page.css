@@ -243,20 +243,26 @@ main.grid {
 }
 
 .tile {
-  display: block;
   padding: 16px;
   background-color: rgba(255, 255, 255, 0.03);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 0 12px rgba(0, 255, 128, 0.2);
 }
 
 .tile-content {
   display: flex;
   flex-direction: row;
   gap: 20px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 
 .tile-left {
-  flex: 0 0 120px;
+  flex: 0 0 140px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
 }
 
 .tile-image {
@@ -268,37 +274,18 @@ main.grid {
   box-shadow: 0 0 8px rgba(0, 255, 128, 0.3);
 }
 
-.tile-right {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.tile-title {
-  font-size: 20px;
-  font-weight: bold;
-  color: #fff;
-}
-
-.tile-desc {
-  font-size: 14px;
-  color: #c9c9c9;
-  line-height: 1.6;
-}
-
 .tile-link {
-  align-self: start;
-  margin-top: 4px;
   background: rgba(0, 255, 170, 0.1);
   border: 1px solid #00ffaa;
   border-radius: 6px;
-  padding: 6px 12px;
+  padding: 6px 10px;
   color: #00ffcc;
   font-weight: bold;
   text-decoration: none;
   font-size: 13px;
   transition: background 0.2s, transform 0.2s;
+  width: 100%;
+  text-align: center;
 }
 
 .tile-link:hover {
@@ -309,8 +296,10 @@ main.grid {
 .tile-authors {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 10px;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 6px;
+  width: 100%;
 }
 
 .author {
@@ -321,12 +310,33 @@ main.grid {
   color: #99ffdd;
   border: 1px solid rgba(0, 255, 170, 0.2);
   transition: background 0.2s;
+  white-space: nowrap;
 }
 
 .author:hover {
   background: rgba(0, 255, 170, 0.1);
 }
 
+.tile-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* сверху вниз */
+  gap: 8px;
+  color: #fff;
+}
+
+.tile-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.tile-desc {
+  font-size: 10px;
+  color: #c9c9c9;
+  line-height: 1.6;
+}
 
 /* === Адаптивность === */
 @media screen and (min-width: 1280px) {
@@ -334,4 +344,3 @@ main.grid {
     grid-template-columns: repeat(4, 1fr);
   }
 }
-
