@@ -65,9 +65,11 @@ for tile in tiles:
     if authors_container:
         authors_container.clear()
         for name in authors:
-            author_span = soup.new_tag("span", **{"class": "author"})
-            author_span.string = name
-            authors_container.append(author_span)
+            author_link = soup.new_tag("a", href=f"https://modrinth.com/user/{name}", target="_blank", **{"class": "author"})
+            author_link.string = name
+            authors_container.append(author_link)
+
+
 
     print(f"✅ Обновлено: {data.get('title')} (авторы: {', '.join(authors)})")
 

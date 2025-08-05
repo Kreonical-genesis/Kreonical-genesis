@@ -21,9 +21,9 @@ const images = {
     'assets/images/builds/3.jpg'
   ],
   'bg-rps': [
-    'assets/images/rp/1.jpg',
-    'assets/images/rp/2.jpg',
-    'assets/images/rp/3.jpg'
+    'assets/images/rps/1.jpg',
+    'assets/images/rps/2.jpg',
+    'assets/images/rps/3.jpg'
   ],
   'bg-models': [
     'assets/images/models/1.jpg',
