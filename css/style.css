@@ -111,39 +111,57 @@ body {
 
 @media (max-width: 860px) {
   .main-container {
-    display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+    height: auto;
   }
 
   .section,
   .center-section {
     flex: none;
     width: 50%;
-    height: 33.33vh;
+    height: auto;
+    aspect-ratio: 1/1;
+    background-size: cover;
+    background-position: center;
+    transition: none;
+  }
+
+  .center-section {
+    order: 4;
+    width: 100%;
+    aspect-ratio: auto;
+    height: auto;
+    padding: 30px 0 40px; /* отступы сверху и снизу */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .center-content {
+    position: relative; /* убираем абсолютное позиционирование */
+    top: auto;
+    left: auto;
+    transform: none;
+    padding-top: 20px; /* дополнительный отступ сверху */
+  }
+
+  .avatar {
+    margin-top: 10px; /* чтобы отступить от верхнего края */
   }
 
   .section#section-builds   { order: 0; }
-  .section#section-rp       { order: 2; }
-  .section#section-models   { order: 1; }
+  .section#section-rp       { order: 1; }
+  .section#section-models   { order: 2; }
   .section#section-github   { order: 3; }
-  .center-section           { order: 4; height: 100vh; width: 100%; }
 
-  .center-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    padding: 20px;
-  }
   .section:hover {
-    flex: 1 !important;
+    flex: none !important;
     animation: none !important;
-    background-position: 50% center !important;
+    background-position: center !important;
   }
 
-  .section:not(:hover) {
-    animation: none !important;
-    background-position: 50% center !important;
+  .section:active {
+    transform: scale(0.97);
   }
 }
