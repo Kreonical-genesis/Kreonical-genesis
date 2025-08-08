@@ -1,109 +1,66 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kreo_gen | Программирование</title>
-  <link rel="stylesheet" href="css/page.css" />
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>GitHub — GitHub-vitrine</title>
+  <link rel="stylesheet" href="css/github.css" />
 </head>
-<body class="bg-codes">
-
-  <!-- Навигационная панель -->
-  <header>
-    <nav class="nav-bar">
-      <button class="nav-button" data-target="builds.html">
-        <span class="nav-icon" style="background-image: url('assets/icons/build.png');"></span>Постройки
-      </button>
-      <button class="nav-button" data-target="rp.html">
-        <span class="nav-icon" style="background-image: url('assets/icons/rp.png');"></span>Ресурспаки
-      </button>
-      <button class="nav-button" data-target="index.html">
-        <span class="nav-icon" style="background-image: url('assets/icons/home.png');"></span>Главная
-      </button>
-      <button class="nav-button" data-target="blockbench.html">
-        <span class="nav-icon" style="background-image: url('assets/icons/models.png');"></span>Модели
-      </button>
-      <button class="nav-button" data-target="github.html" data-page="true">
-        <span class="nav-icon" style="background-image: url('assets/icons/code.png');"></span>Программирование
-      </button>
-    </nav>
+<body>
+  <header class="gh-header">
+    <div class="brand">Kreonical — GitHub Vitrine</div>
+    <div class="help">Данные читаются из <code>/data/&lt;username&gt;.json</code></div>
   </header>
 
-  <!-- Фоновая карусель -->
-  <div class="background-slideshow"></div>
-
-  <!-- Основной контент -->
-  <main class="grid">
-    <!-- Карточка постройки -->
-    <div class="tile" data-desc="descriptions/code1.md">
-      <div class="tile-title">Название 1</div>
-      <div class="tile-image" style="background-image: url('assets/images/codes/1.jpg');"></div>
-      <div class="tile-desc">
-        <div class="desc-content">Загрузка описания...</div>
+  <main id="app" data-username="Kreonical-genesis">
+    <!-- Сайдбар профиля -->
+    <aside class="profile-pane">
+      <div class="avatar-wrap">
+        <img id="gh-avatar" class="avatar" src="assets/avatar.png" alt="avatar" />
       </div>
-    </div>
+      <h2 id="gh-name">Имя</h2>
+      <p id="gh-login">@login</p>
+      <p id="gh-bio" class="bio">Bio пользователя...</p>
 
-    <!-- Дублируемая структура карточек -->
-    <div class="tile" data-desc="descriptions/code2.md">
-      <div class="tile-title">Название 2</div>
-      <div class="tile-image" style="background-image: url('assets/images/codes/2.jpg');"></div>
-      <div class="tile-desc">
-        <div class="desc-content">Загрузка описания...</div>
+      <div class="stats">
+        <div><strong id="gh-repos-count">0</strong><span>репозиториев</span></div>
+        <div><strong id="gh-followers">0</strong><span>подписчиков</span></div>
+        <div><strong id="gh-following">0</strong><span>подписок</span></div>
       </div>
-    </div>
 
-    <div class="tile" data-desc="descriptions/code3.md">
-      <div class="tile-title">Название 3</div>
-      <div class="tile-image" style="background-image: url('assets/images/codes/3.jpg');"></div>
-      <div class="tile-desc">
-        <div class="desc-content">Загрузка описания...</div>
+      <div class="profile-actions">
+        <a id="gh-profile-link" class="btn" href="#" target="_blank">Открыть в GitHub</a>
       </div>
-    </div>
 
-    <div class="tile" data-desc="descriptions/code4.md">
-      <div class="tile-title">Название 4</div>
-      <div class="tile-image" style="background-image: url('assets/images/codes/4.jpg');"></div>
-      <div class="tile-desc">
-        <div class="desc-content">Загрузка описания...</div>
+      <div class="pinned" id="pinned-block">
+        <h4>Избранное</h4>
+        <div id="pinned-list">—</div>
       </div>
-    </div>
+    </aside>
+
+    <!-- Основной контент -->
+    <section class="content">
+      <section class="top-row">
+        <div class="lang-chart card">
+          <h3>Языки (сумма по репозиториям)</h3>
+          <div id="lang-bars"></div>
+        </div>
+
+        <div class="activity card">
+          <h3>Активность (последние события)</h3>
+          <ul id="activity-list" class="activity-list">
+            <li>Загрузка...</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="repos card">
+        <h3>Репозитории</h3>
+        <div id="repos-grid" class="repos-grid">Загрузка...</div>
+      </section>
+    </section>
   </main>
 
-<!-- Футер -->
-<footer class="minecraft-footer">
-  <div class="footer-content">
-    <div class="footer-section server-info">
-      <h3 class="footer-title">позже буду заполнять</h3>
-      <p>Может быть позже буду заполнять</p>
-      <p><span class="status-dot"></span>тут тоже что-то будет</p>
-    </div>
-    <div class="footer-section">
-      <h3 class="footer-title">Навигация</h3>
-      <ul class="footer-links">
-        <li><a href="index.html">Главная</a></li>
-      </ul>
-    </div>
-    <div class="footer-section">
-      <h3 class="footer-title">Связь</h3>
-      <div class="social-icons">
-        <a href="#"><i class="fab fa-discord"></i></a>
-        <a href="#"><i class="fab fa-youtube"></i></a>
-        <a href="#"><i class="fab fa-github"></i></a>
-      </div>
-    </div>
-    <div class="footer-section">
-      <h3 class="footer-title">Разработчик</h3>
-      <p>Kreonical_genesis</p>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    &copy; 2025 Kreonical-genesis | Все права может быть будут защищены.
-  </div>
-</footer>
-
-  <!-- Скрипты -->
-  <script src="js/page.js"></script>
-  <script src="js/pixel_nav.js"></script>
+  <script src="js/github.js"></script>
 </body>
 </html>

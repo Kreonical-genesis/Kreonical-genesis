@@ -1,0 +1,143 @@
+/* github.css - отдельный стиль для GitHub-витрины */
+:root{
+  --bg:#0b0f12;
+  --card:#071018;
+  --accent:#00ffcc;
+  --muted:#9aa6ad;
+  --glass: rgba(255,255,255,0.03);
+}
+
+*{box-sizing:border-box}
+body {
+  margin:0;
+  font-family: Inter, "Segoe UI", system-ui, -apple-system, Roboto, Arial;
+  background: linear-gradient(180deg,#050608 0%, #081018 100%);
+  color:#eafaf1;
+  min-height:100vh;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* Header */
+.gh-header{
+  padding:12px 18px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background: linear-gradient(90deg, rgba(255,255,255,0.02), transparent);
+  border-bottom:1px solid rgba(255,255,255,0.03);
+  color:var(--muted);
+  font-size:14px;
+}
+
+/* Layout */
+main#app{
+  display:grid;
+  grid-template-columns: 320px 1fr;
+  gap:24px;
+  padding:22px;
+  max-width:1200px;
+  margin:18px auto;
+}
+
+/* Профиль */
+.profile-pane{
+  background:var(--card);
+  border-radius:12px;
+  padding:18px;
+  box-shadow: 0 6px 22px rgba(0,0,0,0.6);
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  position:relative;
+}
+
+.avatar-wrap{
+  display:flex;
+  justify-content:center;
+  margin-top:4px;
+}
+.avatar{
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  object-fit:cover;
+  border:4px solid rgba(255,255,255,0.03);
+  box-shadow: 0 6px 18px rgba(0,255,170,0.06);
+}
+
+/* имя, ник, био */
+#gh-name { margin:8px 0 0; font-size:20px; text-align:center; }
+#gh-login { color:var(--muted); text-align:center; margin:0; }
+.bio { color:var(--muted); font-size:14px; text-align:center; margin:6px 0 12px; }
+
+/* статистика */
+.stats { display:flex; gap:10px; justify-content:space-around; padding:6px 0; }
+.stats div { text-align:center; font-size:13px; color:var(--muted); }
+.stats strong { display:block; font-size:16px; color:var(--accent); }
+
+/* кнопка открыть профиль */
+.profile-actions { display:flex; justify-content:center; }
+.btn {
+  background: linear-gradient(90deg, rgba(0,255,170,0.08), rgba(0,170,255,0.04));
+  color:var(--accent);
+  border:1px solid rgba(0,255,170,0.12);
+  padding:8px 12px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:600;
+}
+
+/* Пины */
+.pinned { margin-top:8px; }
+.pinned h4 { margin:0 0 8px; font-size:14px; color:#fff; }
+.pinned-list { display:flex; flex-direction:column; gap:6px; }
+.pinned-item {
+  display:block;
+  padding:8px;
+  background:var(--glass);
+  border-radius:8px;
+  text-decoration:none;
+  color:#eafaf1;
+  font-size:13px;
+}
+.pinned-desc { color:var(--muted); font-size:12px; margin-top:6px; }
+
+/* CONTENT */
+.content { display:flex; flex-direction:column; gap:18px; }
+.top-row { display:flex; gap:18px; }
+.card { background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent); padding:14px; border-radius:12px; box-shadow: 0 8px 30px rgba(0,0,0,0.6); }
+
+/* LANG CHART */
+.lang-chart { width:360px; max-width:100%; }
+.lang-row { display:flex; align-items:center; gap:10px; margin-bottom:10px;}
+.lang-label { width:120px; font-size:13px; color:var(--muted);}
+.lang-bar-wrap { flex:1; background: rgba(255,255,255,0.03); border-radius:8px; height:26px; overflow:hidden; }
+.lang-bar { height:100%; display:flex; align-items:center; justify-content:flex-end; padding-right:8px; font-size:12px; color:#021; background: linear-gradient(90deg, rgba(0,255,170,0.9), rgba(0,170,255,0.9)); border-radius:8px; }
+
+/* ACTIVITY */
+.activity { flex:1; min-width:240px; }
+.activity-list { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:8px; max-height:240px; overflow:auto; }
+.activity-item { font-size:13px; color:var(--muted); padding:6px; background: rgba(255,255,255,0.01); border-radius:8px; }
+
+/* REPOS */
+.repos-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:12px; margin-top:12px;}
+.repo-card { padding:12px; background: linear-gradient(180deg, rgba(0,0,0,0.15), rgba(255,255,255,0.02)); border-radius:10px; display:flex; flex-direction:column; gap:8px; min-height:110px; }
+.repo-name { font-weight:700; color:#fff; text-decoration:none; font-size:15px; }
+.repo-desc { color:var(--muted); font-size:13px; margin:2px 0 0; min-height:36px; }
+.repo-meta { display:flex; gap:12px; color:var(--muted); font-size:12px; align-items:center; }
+.repo-lang { background: rgba(255,255,255,0.03); padding:4px 8px; border-radius:6px; }
+.repo-stats { color:var(--muted); margin-left:auto; font-size:12px; }
+.repo-updated { font-size:12px; color:var(--muted); margin-top:auto; }
+
+/* Адаптив (телефон) */
+@media (max-width: 860px) {
+  main#app { grid-template-columns: 1fr; padding:16px; gap:12px; margin:12px; }
+  .top-row { flex-direction:column; }
+  .lang-chart { width:100%; }
+  .profile-pane { order:2; padding:16px; }
+  .content { order:1; }
+  /* Сделаем аватар и соцсети ниже - добавляем отступы */
+  .avatar { margin-top: 16px; }
+  .pinned { margin-top: 10px; }
+}
