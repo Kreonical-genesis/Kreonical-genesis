@@ -2,7 +2,7 @@
 (async () => {
   const app = document.getElementById('app');
   const username = app.dataset.username;
-  const dataPath = `data/${username}.json`;
+  const dataPath = `./data/${username}.json`;
 
   function el(tag, cls, text) {
     const e = document.createElement(tag);
@@ -18,6 +18,8 @@
 
   try {
     const res = await fetch(dataPath);
+    console.log('Response status:', res.status);
+    console.log('Response URL:', res.url);
     if (!res.ok) throw new Error(`Ошибка загрузки ${dataPath}: ${res.status}`);
     const data = await res.json();
 
@@ -56,6 +58,7 @@
   } catch (err) {
     console.error(err);
     document.getElementById('repos-grid').textContent = 'Не удалось загрузить данные. Убедитесь, что data/' + username + '.json существует.';
+    console.error('Попытка загрузить:', dataPath);
   }
 
   function renderRepos(repos) {

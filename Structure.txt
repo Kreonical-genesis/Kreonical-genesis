@@ -1,0 +1,77 @@
+C:\Users\Oleg\Documents\cites\my_social
+
+Структура папок
+Серийный номер тома: 7294-8D89
+C:.
+|   blockbench.html
+|   builds.html
+|   github.html
+|   index.html
+|   rp - копия.html
+|   rp.html
+|   Structure.txt
+|   
++---assets
+|   |   avatar.png
+|   |   
+|   +---icons
+|   |       discord.png
+|   |       github.png
+|   |       pinterest.png
+|   |       soundcloud.png
+|   |       telegram.png
+|   |       twitch.png
+|   |       vk.png
+|   |       youtube.png
+|   |       
+|   +---images
+|   |   |   preview1.png
+|   |   |   preview2.png
+|   |   |   
+|   |   +---blockbenchs
+|   |   |       1.jpg
+|   |   |       2.jpg
+|   |   |       
+|   |   +---builds
+|   |   |       1.jpg
+|   |   |       2.jpg
+|   |   |       3.jpg
+|   |   |       
+|   |   +---codes
+|   |   |       1.jpg
+|   |   |       2.jpg
+|   |   |       
+|   |   \---rps
+|   |           1.jpg
+|   |           2.jpg
+|   |           
+|   \---models
+|           model1.bbmodel
+|           model2.bbmodel
+|           
++---css
+|       github.css
+|       page.css
+|       style.css
+|       
++---data
+|       Danrus1100.json
+|       kreonical-genesis.json
+|       
++---descriptions
+|       build1.md
+|       build2.md
+|       build3.md
+|       build4.md
+|       
++---js
+|       github.js
+|       index.js
+|       main.js
+|       page.js
+|       pixel_nav.js
+|       
+\---scripts
+        fetch_github.py
+        update_modrinth.py
+        

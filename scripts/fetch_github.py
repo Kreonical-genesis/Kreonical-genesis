@@ -8,7 +8,7 @@ import requests
 API = "https://api.github.com"
 
 # Вместо передачи из командной строки — сразу тут укажи никнейм:
-GITHUB_USERNAME = "Kreonical-genesis"  # <-- поменяй на нужный ник
+GITHUB_USERNAME = "kreonical-genesis"
 
 def req(url, token=None, params=None):
     headers = {"Accept": "application/vnd.github.v3+json"}
