@@ -9,17 +9,34 @@
 <body>
   <header class="gh-header">
     <div class="brand">Kreonical — GitHub Vitrine</div>
+    <div class="controls">
+      <!-- Поиск по репозиториям -->
+      <input id="search" class="control-input" type="search" placeholder="Поиск по репозиториям…" aria-label="Поиск" />
+      <!-- Фильтр по языку -->
+      <select id="filter-language" class="control-input" aria-label="Фильтр по языку">
+        <option value="">Все языки</option>
+      </select>
+      <!-- Сортировка -->
+      <select id="sort" class="control-input" aria-label="Сортировка">
+        <option value="updated_desc">Обновлённые (сначала новые)</option>
+        <option value="stars_desc">Звёзды (по убыв.)</option>
+        <option value="created_desc">Новые репозитории</option>
+        <option value="size_desc">Размер (по убыв.)</option>
+        <option value="name_asc">Имя (A→Z)</option>
+      </select>
+    </div>
   </header>
 
   <main id="app" data-username="kreonical-genesis">
     <!-- Сайдбар профиля -->
     <aside class="profile-pane">
       <div class="avatar-wrap">
-        <img id="gh-avatar" class="avatar" src="assets/avatar.png" alt="avatar" />
+        <div class="avatar-skeleton skeleton"></div>
+        <img id="gh-avatar" class="avatar hidden" src="assets/avatar.png" alt="avatar" />
       </div>
-      <h2 id="gh-name">Имя</h2>
-      <p id="gh-login">@login</p>
-      <p id="gh-bio" class="bio">Bio пользователя...</p>
+      <h2 id="gh-name" class="text-skeleton skeleton">Имя</h2>
+      <p id="gh-login" class="text-skeleton skeleton">@login</p>
+      <p id="gh-bio" class="bio text-skeleton skeleton">Bio пользователя…</p>
 
       <div class="stats">
         <div><strong id="gh-repos-count">0</strong><span>репозиториев</span></div>
@@ -28,12 +45,23 @@
       </div>
 
       <div class="profile-actions">
-        <a id="gh-profile-link" class="btn" href="#" target="_blank">Открыт~ЁЁЁь в GitHub</a>
+        <a id="gh-profile-link" class="btn" href="#" target="_blank" rel="noopener">Открыть в GitHub</a>
       </div>
 
       <div class="pinned" id="pinned-block">
         <h4>Избранное</h4>
-        <div id="pinned-list">—</div>
+        <div id="pinned-list" class="pinned-list">
+          <div class="pinned-skeleton skeleton"></div>
+          <div class="pinned-skeleton skeleton"></div>
+          <div class="pinned-skeleton skeleton"></div>
+        </div>
+      </div>
+
+      <div class="quick-stats card">
+        <h4>Быстрые метрики</h4>
+        <ul class="qs-list" id="quick-stats">
+          <!-- Наполняется JS -->
+        </ul>
       </div>
     </aside>
 
@@ -42,20 +70,30 @@
       <section class="top-row">
         <div class="lang-chart card">
           <h3>Языки (сумма по репозиториям)</h3>
-          <div id="lang-bars"></div>
+          <div id="lang-bars" class="lang-bars">
+            <!-- Скелетоны -->
+            <div class="lang-row"><div class="lang-label skeleton text-skeleton"> </div><div class="lang-bar-wrap"><div class="lang-bar skeleton"> </div></div></div>
+            <div class="lang-row"><div class="lang-label skeleton text-skeleton"> </div><div class="lang-bar-wrap"><div class="lang-bar skeleton"> </div></div></div>
+            <div class="lang-row"><div class="lang-label skeleton text-skeleton"> </div><div class="lang-bar-wrap"><div class="lang-bar skeleton"> </div></div></div>
+          </div>
         </div>
 
         <div class="activity card">
           <h3>Активность (последние события)</h3>
           <ul id="activity-list" class="activity-list">
-            <li>Загрузка...</li>
+            <li class="activity-item skeleton"> </li>
+            <li class="activity-item skeleton"> </li>
+            <li class="activity-item skeleton"> </li>
           </ul>
         </div>
       </section>
 
       <section class="repos card">
-        <h3>Репозитории</h3>
-        <div id="repos-grid" class="repos-grid">Загрузка...</div>
+        <div class="repos-header">
+          <h3>Репозитории</h3>
+          <div class="repo-counters" id="repo-counters"></div>
+        </div>
+        <div id="repos-grid" class="repos-grid"></div>
       </section>
     </section>
   </main>
