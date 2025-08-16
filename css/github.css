@@ -1,188 +1,321 @@
-/* github.css - отдельный стиль для GitHub-витрины */
-:root{
-  --bg:#0b0f12;
-  --card:#071018;
-  --accent:#00ffcc;
-  --muted:#9aa6ad;
-  --glass: rgba(255,255,255,0.03);
-}
-
-*{box-sizing:border-box}
+/* ------------------ БАЗА ------------------ */
 body {
-  margin:0;
-  font-family: Inter, "Segoe UI", system-ui, -apple-system, Roboto, Arial;
-  background: linear-gradient(180deg,#050608 0%, #081018 100%);
-  color:#eafaf1;
-  min-height:100vh;
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
+  margin: 0;
+  font-family: "Segoe UI", Roboto, sans-serif;
+  background: #0d1117;
+  color: #e6edf3;
+  line-height: 1.4;
 }
 
-/* Header */
-.gh-header{
-  padding:12px 18px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:12px;
-  background: linear-gradient(90deg, rgba(255,255,255,0.02), transparent);
-  border-bottom:1px solid rgba(255,255,255,0.03);
-  color:var(--muted);
-  font-size:14px;
-  position:sticky;
-  top:0;
-  backdrop-filter: blur(6px);
-  z-index:10;
-}
-.controls{display:flex; gap:8px; align-items:center;}
-.control-input{
-  background: rgba(255,255,255,0.04);
-  color:#eafaf1;
-  border:1px solid rgba(255,255,255,0.08);
-  padding:8px 10px;
-  border-radius:8px;
-  outline:none;
-}
-.control-input::placeholder{color:#8da3a9}
-
-/* Layout */
-main#app{
-  display:grid;
-  grid-template-columns: 320px 1fr;
-  gap:24px;
-  padding:22px;
-  max-width:1200px;
-  margin:18px auto;
+h2, h3, h4 {
+  margin: 0.3em 0;
+  font-weight: 600;
 }
 
-/* Профиль */
-.profile-pane{
-  background:var(--card);
-  border-radius:12px;
-  padding:18px;
-  box-shadow: 0 6px 22px rgba(0,0,0,0.6);
-  display:flex;
-  flex-direction:column;
-  gap:12px;
-  position:relative;
+a {
+  color: #58a6ff;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
 }
 
-.avatar-wrap{
-  display:flex;
-  justify-content:center;
-  margin-top:4px;
+/* ------------------ HEADER ------------------ */
+.gh-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: #161b22;
+  border-bottom: 1px solid #30363d;
 }
-.avatar{
-  width:120px;
-  height:120px;
-  border-radius:50%;
-  object-fit:cover;
-  border:4px solid rgba(255,255,255,0.06);
-  box-shadow: 0 6px 18px rgba(0,255,170,0.12);
+
+.brand {
+  font-size: 1.2rem;
+  font-weight: bold;
 }
-.avatar.hidden{display:none}
 
-/* Скелетоны */
-.skeleton{
-  position:relative;
-  overflow:hidden;
-  background: rgba(255,255,255,0.06);
-  border-radius:10px;
+.controls {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
 }
-.skeleton::after{
-  content:"";
-  position:absolute; inset:0;
-  transform: translateX(-100%);
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.12), transparent);
-  animation: shimmer 1.4s infinite;
+
+.control-input {
+  background: #0d1117;
+  color: #e6edf3;
+  border: 1px solid #30363d;
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
 }
-@keyframes shimmer{100%{transform: translateX(100%);}}
-.avatar-skeleton{width:120px; height:120px; border-radius:50%;}
-.text-skeleton{height:16px; width:70%; margin:6px auto; border-radius:6px;}
-.pinned-skeleton{height:44px; border-radius:8px;}
 
-/* имя, ник, био */
-#gh-name { margin:8px 0 0; font-size:20px; text-align:center; }
-#gh-login { color:var(--muted); text-align:center; margin:0; }
-.bio { color:var(--muted); font-size:14px; text-align:center; margin:6px 0 12px; }
+/* ------------------ LAYOUT ------------------ */
+#app {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 1rem;
+  padding: 1rem;
+}
 
-/* статистика */
-.stats { display:flex; gap:10px; justify-content:space-around; padding:6px 0; }
-.stats div { text-align:center; font-size:13px; color:var(--muted); }
-.stats strong { display:block; font-size:16px; color:var(--accent); }
+.profile-pane {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
 
-/* кнопка открыть профиль */
-.profile-actions { display:flex; justify-content:center; }
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* ------------------ PROFILE ------------------ */
+.avatar-wrap {
+  display: flex;
+  justify-content: center;
+}
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  display: block;
+}
+.avatar.hidden {
+  display: none;
+}
+
+.text-skeleton, .skeleton {
+  background: #202630;
+  border-radius: 4px;
+  color: transparent;
+}
+
+.bio {
+  font-size: 0.9rem;
+  color: #8b949e;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-around;
+  font-size: 0.9rem;
+}
+.stats div {
+  text-align: center;
+}
+
 .btn {
-  background: linear-gradient(90deg, rgba(0,255,170,0.08), rgba(0,170,255,0.04));
-  color:var(--accent);
-  border:1px solid rgba(0,255,170,0.18);
-  padding:8px 12px;
-  border-radius:8px;
-  text-decoration:none;
-  font-weight:600;
-  transition: transform .15s ease, box-shadow .15s ease;
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  background: #238636;
+  border-radius: 6px;
+  color: white;
+  font-weight: 600;
 }
-.btn:hover{ transform: translateY(-1px); box-shadow: 0 8px 24px rgba(0,255,170,0.12); }
-
-/* Пины */
-.pinned { margin-top:8px; }
-.pinned h4 { margin:0 0 8px; font-size:14px; color:#fff; }
-.pinned-list { display:flex; flex-direction:column; gap:6px; }
-.pinned-item {
-  display:block;
-  padding:8px;
-  background:var(--glass);
-  border-radius:8px;
-  text-decoration:none;
-  color:#eafaf1;
-  font-size:13px;
-  border:1px solid rgba(255,255,255,0.06);
-  transition: transform .15s ease, border-color .15s ease;
+.btn:hover {
+  background: #2ea043;
 }
-.pinned-item:hover{ transform: translateY(-1px); border-color: rgba(0,255,170,0.25);}
-.pinned-desc { color:var(--muted); font-size:12px; margin-top:6px; }
 
-/* CONTENT */
-.content { display:flex; flex-direction:column; gap:18px; }
-.top-row { display:flex; gap:18px; overflow-x:auto; padding-bottom:4px; }
-.card { background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent); padding:14px; border-radius:12px; box-shadow: 0 8px 30px rgba(0,0,0,0.6); min-width:320px; }
+/* ------------------ CARDS ------------------ */
+.card {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  padding: 1rem;
+}
 
-/* LANG CHART */
-.lang-chart { width:360px; max-width:100%; }
-.lang-bars{min-height:120px}
-.lang-row { display:flex; align-items:center; gap:10px; margin-bottom:10px;}
-.lang-label { width:140px; font-size:13px; color:var(--muted);}
-.lang-bar-wrap { flex:1; background: rgba(255,255,255,0.03); border-radius:8px; height:26px; overflow:hidden; }
-.lang-bar { height:100%; display:flex; align-items:center; justify-content:flex-end; padding-right:8px; font-size:12px; color:#021; background: linear-gradient(90deg, rgba(0,255,170,0.9), rgba(0,170,255,0.9)); border-radius:8px; }
+/* ------------------ PINNED ------------------ */
+.pinned-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
 
-/* ACTIVITY */
-.activity { flex:1; min-width:240px; }
-.activity-list { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:8px; max-height:260px; overflow:auto; }
-.activity-item { font-size:13px; color:var(--muted); padding:8px; background: rgba(255,255,255,0.03); border-radius:8px; border:1px solid rgba(255,255,255,0.06); display:flex; gap:8px; align-items:flex-start; }
-.activity-emoji{font-size:16px;}
-.activity a{color:#bdfcff; text-decoration:none}
+/* ------------------ QUICK STATS ------------------ */
+.qs-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.qs-list li {
+  margin: 0.3rem 0;
+}
 
-/* REPOS */
-.repos .repos-header{display:flex; align-items:center; justify-content:space-between; gap:12px;}
-.repo-counters{font-size:12px; color:var(--muted)}
-.repos-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:12px; margin-top:12px;}
-.repo-card { padding:12px; background: linear-gradient(180deg, rgba(0,0,0,0.15), rgba(255,255,255,0.02)); border-radius:10px; display:flex; flex-direction:column; gap:8px; min-height:110px; border:1px solid rgba(255,255,255,0.06); transition: transform .15s ease, border-color .15s ease; }
-.repo-card:hover{ transform: translateY(-2px); border-color: rgba(0,255,170,0.25);}
-.repo-name { font-weight:700; color:#fff; text-decoration:none; font-size:15px; }
-.repo-desc { color:var(--muted); font-size:13px; margin:2px 0 0; min-height:36px; }
-.repo-meta { display:flex; gap:8px; color:var(--muted); font-size:12px; align-items:center; flex-wrap:wrap; }
-.repo-tag { background: rgba(255,255,255,0.06); padding:4px 8px; border-radius:6px; }
-.repo-stats { color:var(--muted); margin-left:auto; font-size:12px; }
-.repo-updated { font-size:12px; color:var(--muted); margin-top:auto; }
+/* ------------------ LANGUAGES ------------------ */
+.lang-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
 
-/* Адаптив (телефон) */
-@media (max-width: 960px) {
-  main#app { grid-template-columns: 1fr; padding:16px; gap:12px; margin:12px; }
-  .top-row { flex-direction:row; }
-  .lang-chart { width:100%; }
-  .profile-pane { order:2; padding:16px; }
-  .content { order:1; }
-  .avatar { margin-top: 16px; }
-  .pinned { margin-top: 10px; }
+.lang-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.lang-label {
+  min-width: 120px;
+  font-size: 0.9rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.lang-bar-wrap {
+  flex: 1;
+  background: #21262d;
+  border-radius: 4px;
+  height: 14px;
+  overflow: hidden;
+}
+
+.lang-bar {
+  height: 100%;
+  border-radius: 4px;
+}
+
+/* ------------------ ACTIVITY ------------------ */
+.activity-filters {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.activity-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.activity-item {
+  padding: 0.4rem 0.6rem;
+  background: #21262d;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+/* ------------------ HEATMAP ------------------ */
+.heatmap {
+  display: grid;
+  grid-template-columns: repeat(53, 1fr); /* 53 недели */
+  grid-auto-rows: 12px;
+  gap: 2px;
+  max-width: 100%;
+}
+
+.heatmap div {
+  width: 100%;
+  height: 100%;
+  border-radius: 2px;
+  background: #161b22;
+  transition: background 0.2s ease;
+}
+
+.heatmap div.level-0 { background: #161b22; }
+.heatmap div.level-1 { background: #0e4429; }
+.heatmap div.level-2 { background: #006d32; }
+.heatmap div.level-3 { background: #26a641; }
+.heatmap div.level-4 { background: #39d353; }
+
+.heatmap-legend {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 0.8rem;
+  gap: 4px;
+  margin-top: 0.4rem;
+}
+.heatmap-legend span {
+  width: 12px;
+  height: 12px;
+  display: inline-block;
+  border-radius: 2px;
+}
+
+/* ------------------ REPOSITORIES ------------------ */
+.repos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.repo-card {
+  background: #21262d;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  padding: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.repo-name {
+  font-weight: 600;
+  font-size: 1rem;
+}
+.repo-desc {
+  font-size: 0.85rem;
+  color: #8b949e;
+}
+
+.repo-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+}
+.repo-tag {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 4px;
+  padding: 0.1rem 0.4rem;
+}
+
+.repo-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  font-size: 0.8rem;
+}
+.repo-badge {
+  padding: 0.2rem 0.4rem;
+  background: #30363d;
+  border-radius: 4px;
+}
+.repo-badge--muted {
+  background: transparent;
+  color: #8b949e;
+}
+
+.repo-contrib, .repo-stars {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+.repo-contrib img,
+.repo-stars img {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 1px solid #30363d;
+  transition: transform 0.2s;
+}
+.repo-contrib img:hover,
+.repo-stars img:hover {
+  transform: scale(1.2);
+}
+
+.repo-stars {
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: #8b949e;
+}
+
+.repo-updated {
+  font-size: 0.7rem;
+  color: #8b949e;
+  margin-top: 0.2rem;
 }

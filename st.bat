@@ -3,7 +3,7 @@ setlocal enabledelayedexpansion
 
 :: Имя текущего скрипта (например structure.bat)
 set SCRIPT_NAME=%~nx0
-
+:: ну вот так вот
 :: Файл вывода
 set OUTPUT_FILE=Structure.txt
 
