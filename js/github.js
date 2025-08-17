@@ -6,16 +6,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const app = document.getElementById("app");
   const username = app.dataset.username;
 
-  // Путь до JSON
   const dataUrl = `data/${username}.json`;
 
-  // Загружаем данные
   fetch(dataUrl)
     .then(r => r.json())
     .then(data => initGitHubPage(data))
-    .catch(err => {
-      console.error("Ошибка загрузки GitHub JSON:", err);
-    });
+    .catch(err => console.error("Ошибка загрузки GitHub JSON:", err));
 });
 
 /**
@@ -49,7 +45,6 @@ function renderPinned(repos) {
   const pinnedList = document.getElementById("pinned-list");
   pinnedList.innerHTML = "";
 
-  // Берём топ-4 по звёздам
   const top = [...repos].sort((a, b) => b.stargazers_count - a.stargazers_count).slice(0, 4);
   for (let r of top) {
     const div = document.createElement("div");
@@ -122,55 +117,57 @@ function renderLanguages(repos) {
   }
 }
 
-/* Генератор цвета для языков */
+/* Цвета языков */
 function colorForLang(lang) {
   const colors = {
-    JavaScript: "#f1e05aff",
-    TypeScript: "#3178c6ff",
-    Python: "#3572A5ff",
-    Java: "#b07219ff",
-    C: "#555555ff",
-    "C++": "#f34b7dff",
-    HTML: "#e34c26ff",
-    CSS: "#563d7cff",
-    Shell: "#89e051ff",
-    Go: "#00ADD8ff",
-    Rust: "#824c00ff",
-    Kotlin: "#ff12ffff",
-    GDScript: "#3f3f3fff",
-    Swift: "#999",
-    Julia: "#70005dff",
-    Ruby: "#530000ff",
-    CoffeeScript: "#475cfeff",
-    Elixir: "#9736afff",
-    "C#": "#088014ff",
-    Scala: "#ff5353ff",
-    Erlang: "#b41fc8ff",
-    Nim: "#bcc600ff",
-    Assembler: "#ffffffff",
-    Haskell: "#846784ff",
-    Red: "#ff0000ffff",
-    Frege: "#62f7ffff",
-    Racket: "#3a28ffff",
-    OCaml: "#ffcd59ff",
-    "Objective-C": "#2e35ffff",
-    LiveScript: "#69ff55ff",
-    D: "#ff7575ff",
-    "F#": "#9d05aeff",
-    Raku: "#3c00ffff",
-    Chapel: "#adee20ff",
-    Gosu: "#767676ff",
-    Zig: "#e17c7cff",
-    Haxe: "#c1800fff",
-    V: "#938cffff",
-    Dart: "#25fad6ff",
-    Smalltalk: "#3b593dff",
-    Mojo: "#ff3f3fff",
-    Odin: "#626ef5ff",
-    Factor: "#afb9acff"
+    "Assembler": "#ffffff",
+    "C": "#555555",
+    "C#": "#178600",
+    "C++": "#f34b7d",
+    "CSS": "#563d7c",
+    "D": "#ba595e",
+    "Dart": "#00B4AB",
+    "Elixir": "#6e4a7e",
+    "Erlang": "#B83998",
+    "F#": "#b845fc",
+    "Frege": "#00cafe",
+    "Go": "#00ADD8",
+    "Gosu": "#82937f",
+    "GDScript": "#355570",
+    "Haxe": "#df7900",
+    "Haskell": "#5e5086",
+    "HTML": "#e34c26",
+    "Java": "#b07219",
+    "JavaScript": "#f1e05a",
+    "Julia": "#a270ba",
+    "Kotlin": "#A97BFF",
+    "LiveScript": "#499886",
+    "Lua": "#000080",
+    "Mojo": "#f5a623",
+    "Nim": "#ffc200",
+    "Objective-C": "#438eff",
+    "OCaml": "#3be133",
+    "Odin": "#60AFFE",
+    "PHP": "#4F5D95",
+    "Python": "#3572A5",
+    "R": "#198CE7",
+    "Raku": "#0000b1",
+    "Ruby": "#701516",
+    "Rust": "#dea584",
+    "Scala": "#c22d40",
+    "Shell": "#89e051",
+    "Smalltalk": "#596706",
+    "SQL": "#e38c00",
+    "Swift": "#ffac45",
+    "TypeScript": "#3178c6",
+    "V": "#4f87c7",
+    "Zig": "#ec915c",
+    "Crystal": "#000100",
+    "CoffeeScript": "#244776"
   };
-  return colors[lang] || "#999";
+  return colors[lang] || "#999999";
 }
+
 
 /* ------------------ ACTIVITY ------------------ */
 function setupActivityFilters(events) {
@@ -192,7 +189,8 @@ function setupActivityFilters(events) {
     for (let ev of filtered.slice(0, 20)) {
       const li = document.createElement("li");
       li.className = "activity-item";
-      li.textContent = `${ev.type} → ${ev.repo.name}`;
+      const date = ev.created_at ? new Date(ev.created_at).toLocaleDateString() : "";
+      li.textContent = `[${date}] ${ev.type} → ${ev.repo.name}`;
       list.appendChild(li);
     }
     if (!filtered.length) {
@@ -212,7 +210,6 @@ function renderHeatmap(weeks) {
   const container = document.getElementById("heatmap");
   container.innerHTML = "";
 
-  // weeks = массив из /stats/commit_activity (52 недели)
   const max = Math.max(...weeks.map(w => w.total), 1);
 
   for (let w of weeks) {
@@ -224,7 +221,6 @@ function renderHeatmap(weeks) {
     }
   }
 
-  // легенда
   const legend = document.getElementById("heatmap-legend");
   legend.innerHTML = "Меньше";
   for (let i = 0; i <= 4; i++) {
@@ -250,13 +246,14 @@ function renderRepos(repos) {
         <span class="repo-badge">⭐ ${r.stargazers_count}</span>
         <span class="repo-badge">🍴 ${r.forks_count}</span>
         ${r.open_issues_count ? `<span class="repo-badge">❗ ${r.open_issues_count}</span>` : ""}
-        ${r.pulls_count ? `<span class="repo-badge">🔀 ${r.pulls_count}</span>` : ""}
-        ${r.releases_count ? `<span class="repo-badge">📦 ${r.releases_count}</span>` : ""}
+        ${r.pulls_count_open ? `<span class="repo-badge">🔀 Открытых PR: ${r.pulls_count_open}</span>` : ""}
+        ${r.pulls_count_closed ? `<span class="repo-badge">✅ Закрытых PR: ${r.pulls_count_closed}</span>` : ""}
+        ${r.releases_count ? `<span class="repo-badge">📦 Релизов: ${r.releases_count}</span>` : ""}
         ${r.latest_release ? `<span class="repo-badge repo-badge--muted">release: ${r.latest_release.tag_name}</span>` : ""}
       </div>
     `;
 
-    // Контрибьюторы (до 3)
+    // Контрибьюторы
     let contribHTML = "";
     if (r.contributors && r.contributors.length) {
       contribHTML = `

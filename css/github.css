@@ -1,173 +1,189 @@
-/* ------------------ БАЗА ------------------ */
+/* =======================
+   Общие стили
+   ======================= */
 body {
   margin: 0;
   font-family: "Segoe UI", Roboto, sans-serif;
-  background: #0d1117;
-  color: #e6edf3;
-  line-height: 1.4;
+  background: #f5f5f5;
+  color: #222;
+  line-height: 1.5;
 }
 
 h2, h3, h4 {
-  margin: 0.3em 0;
+  margin-top: 0;
   font-weight: 600;
 }
 
 a {
-  color: #58a6ff;
+  color: #0366d6;
   text-decoration: none;
 }
+
 a:hover {
   text-decoration: underline;
 }
 
-/* ------------------ HEADER ------------------ */
+/* =======================
+   Шапка
+   ======================= */
 .gh-header {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
-  background: #161b22;
-  border-bottom: 1px solid #30363d;
+  background: #24292e;
+  color: #fff;
+  padding: 10px 20px;
 }
 
 .brand {
-  font-size: 1.2rem;
-  font-weight: bold;
+  font-size: 18px;
+  font-weight: 600;
 }
 
 .controls {
   display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .control-input {
-  background: #0d1117;
-  color: #e6edf3;
-  border: 1px solid #30363d;
-  padding: 0.4rem 0.6rem;
-  border-radius: 6px;
+  padding: 6px 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 14px;
 }
 
-/* ------------------ LAYOUT ------------------ */
-#app {
+/* =======================
+   Сетка (3 колонки)
+   ======================= */
+.gh-layout {
   display: grid;
-  grid-template-columns: 280px 1fr;
-  gap: 1rem;
-  padding: 1rem;
+  grid-template-columns: 1fr 2fr 2fr; /* слева меньше, центр/право больше */
+  gap: 20px;
+  padding: 20px;
 }
 
-.profile-pane {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+/* Левая колонка */
+.gh-left { grid-column: 1; }
+
+/* Центральная колонка */
+.gh-center { grid-column: 2; }
+
+/* Правая колонка */
+.gh-right { grid-column: 3; }
+
+/* Нижний блок на всю ширину */
+.gh-activity {
+  grid-column: 1 / span 3;
+  margin-top: 20px;
 }
 
-.content {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+/* =======================
+   Карточки
+   ======================= */
+.card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
 }
 
-/* ------------------ PROFILE ------------------ */
+/* =======================
+   Профиль
+   ======================= */
 .avatar-wrap {
   display: flex;
   justify-content: center;
+  margin-bottom: 10px;
 }
+
 .avatar {
   width: 120px;
   height: 120px;
   border-radius: 50%;
   display: block;
 }
-.avatar.hidden {
-  display: none;
-}
-
-.text-skeleton, .skeleton {
-  background: #202630;
-  border-radius: 4px;
-  color: transparent;
-}
-
-.bio {
-  font-size: 0.9rem;
-  color: #8b949e;
-}
 
 .stats {
   display: flex;
   justify-content: space-around;
-  font-size: 0.9rem;
+  margin: 10px 0;
 }
+
 .stats div {
   text-align: center;
 }
 
+.profile-actions {
+  text-align: center;
+  margin: 10px 0;
+}
+
 .btn {
   display: inline-block;
-  padding: 0.4rem 0.8rem;
-  background: #238636;
-  border-radius: 6px;
-  color: white;
-  font-weight: 600;
+  background: #0366d6;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-weight: 500;
 }
+
 .btn:hover {
-  background: #2ea043;
+  background: #024b9a;
 }
 
-/* ------------------ CARDS ------------------ */
-.card {
-  background: #161b22;
-  border: 1px solid #30363d;
-  border-radius: 8px;
-  padding: 1rem;
-}
-
-/* ------------------ PINNED ------------------ */
+/* =======================
+   Избранное
+   ======================= */
 .pinned-list {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+  display: grid;
+  gap: 10px;
 }
 
-/* ------------------ QUICK STATS ------------------ */
+.pinned-skeleton {
+  height: 40px;
+  background: #eee;
+  border-radius: 4px;
+}
+
+/* =======================
+   Быстрые метрики
+   ======================= */
 .qs-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.qs-list li {
-  margin: 0.3rem 0;
+  padding-left: 20px;
 }
 
-/* ------------------ LANGUAGES ------------------ */
+.qs-list li {
+  margin: 4px 0;
+}
+
+/* =======================
+   Языки (гистограмма)
+   ======================= */
 .lang-bars {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 8px;
 }
 
 .lang-row {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 10px;
 }
 
 .lang-label {
   min-width: 120px;
-  font-size: 0.9rem;
-  display: flex;
-  justify-content: space-between;
+  font-size: 14px;
+  font-weight: 500;
 }
 
 .lang-bar-wrap {
-  flex: 1;
-  background: #21262d;
+  flex-grow: 1;
+  background: #e1e4e8;
   border-radius: 4px;
-  height: 14px;
   overflow: hidden;
+  height: 12px;
 }
 
 .lang-bar {
@@ -175,147 +191,158 @@ a:hover {
   border-radius: 4px;
 }
 
-/* ------------------ ACTIVITY ------------------ */
+/* =======================
+   Heatmap
+   ======================= */
+.heatmap {
+  display: grid;
+  grid-template-columns: repeat(53, 1fr); /* 53 недели */
+  gap: 2px;
+  margin-top: 10px;
+}
+
+.heatmap div {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  background: #ebedf0;
+}
+
+.heatmap-legend {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 4px;
+  margin-top: 8px;
+}
+
+.heatmap-legend span {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+}
+
+/* =======================
+   Репозитории
+   ======================= */
+.repos-grid {
+  display: grid;
+  gap: 15px;
+}
+
+.repo-card {
+  border: 1px solid #e1e4e8;
+  border-radius: 6px;
+  padding: 12px;
+  background: #fff;
+}
+
+.repo-name {
+  font-weight: 600;
+  font-size: 16px;
+  color: #0366d6;
+}
+
+.repo-desc {
+  font-size: 14px;
+  margin: 5px 0;
+  color: #555;
+}
+
+.repo-meta {
+  font-size: 13px;
+  display: flex;
+  gap: 10px;
+  margin: 5px 0;
+}
+
+.repo-badges {
+  font-size: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.repo-badge {
+  background: #f1f8ff;
+  border: 1px solid #c8e1ff;
+  border-radius: 3px;
+  padding: 2px 6px;
+}
+
+/* Контрибьюторы */
+.repo-contrib {
+  display: flex;
+  margin-top: 6px;
+}
+
+.repo-contrib img {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  margin-right: -6px;
+  border: 2px solid #fff;
+}
+
+/* Stars (последние) */
+.repo-stars {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.stars-avatars img {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-right: -4px;
+  border: 2px solid #fff;
+}
+
+.stars-count {
+  font-size: 12px;
+  color: #666;
+}
+
+/* =======================
+   Активность
+   ======================= */
 .activity-filters {
   display: flex;
-  gap: 0.5rem;
-  margin-bottom: 0.5rem;
+  gap: 10px;
+  margin-bottom: 10px;
 }
 
 .activity-list {
   list-style: none;
   padding: 0;
   margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
 }
+
 .activity-item {
-  padding: 0.4rem 0.6rem;
-  background: #21262d;
-  border-radius: 6px;
-  font-size: 0.9rem;
+  padding: 6px 0;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
 }
 
-/* ------------------ HEATMAP ------------------ */
-.heatmap {
-  display: grid;
-  grid-template-columns: repeat(53, 1fr); /* 53 недели */
-  grid-auto-rows: 12px;
-  gap: 2px;
-  max-width: 100%;
+/* =======================
+   Скелетоны (загрузка)
+   ======================= */
+.skeleton {
+  background: linear-gradient(90deg, #eee, #ddd, #eee);
+  animation: pulse 1.5s infinite;
 }
 
-.heatmap div {
-  width: 100%;
-  height: 100%;
-  border-radius: 2px;
-  background: #161b22;
-  transition: background 0.2s ease;
-}
-
-.heatmap div.level-0 { background: #161b22; }
-.heatmap div.level-1 { background: #0e4429; }
-.heatmap div.level-2 { background: #006d32; }
-.heatmap div.level-3 { background: #26a641; }
-.heatmap div.level-4 { background: #39d353; }
-
-.heatmap-legend {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  font-size: 0.8rem;
-  gap: 4px;
-  margin-top: 0.4rem;
-}
-.heatmap-legend span {
-  width: 12px;
-  height: 12px;
-  display: inline-block;
-  border-radius: 2px;
-}
-
-/* ------------------ REPOSITORIES ------------------ */
-.repos-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1rem;
-}
-
-.repo-card {
-  background: #21262d;
-  border: 1px solid #30363d;
-  border-radius: 8px;
-  padding: 0.8rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-}
-
-.repo-name {
-  font-weight: 600;
-  font-size: 1rem;
-}
-.repo-desc {
-  font-size: 0.85rem;
-  color: #8b949e;
-}
-
-.repo-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-  font-size: 0.8rem;
-}
-.repo-tag {
-  background: #161b22;
-  border: 1px solid #30363d;
-  border-radius: 4px;
-  padding: 0.1rem 0.4rem;
-}
-
-.repo-badges {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.3rem;
-  font-size: 0.8rem;
-}
-.repo-badge {
-  padding: 0.2rem 0.4rem;
-  background: #30363d;
+.text-skeleton {
+  height: 1em;
+  width: 60%;
+  margin: 4px 0;
   border-radius: 4px;
 }
-.repo-badge--muted {
-  background: transparent;
-  color: #8b949e;
-}
 
-.repo-contrib, .repo-stars {
-  display: flex;
-  align-items: center;
-  gap: 0.2rem;
-}
-.repo-contrib img,
-.repo-stars img {
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  border: 1px solid #30363d;
-  transition: transform 0.2s;
-}
-.repo-contrib img:hover,
-.repo-stars img:hover {
-  transform: scale(1.2);
-}
-
-.repo-stars {
-  justify-content: space-between;
-  font-size: 0.8rem;
-  color: #8b949e;
-}
-
-.repo-updated {
-  font-size: 0.7rem;
-  color: #8b949e;
-  margin-top: 0.2rem;
+@keyframes pulse {
+  0% { background-position: -200px 0; }
+  100% { background-position: calc(200px + 100%) 0; }
 }

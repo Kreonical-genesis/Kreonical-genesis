@@ -1,18 +1,38 @@
 {
-  "fetched_at": "2025-08-16T08:03:23Z",
   "user": {
     "login": "Kreonical-genesis",
-    "name": null,
+    "id": 173289203,
+    "node_id": "U_kgDOClQu8w",
     "avatar_url": "https://avatars.githubusercontent.com/u/173289203?v=4",
-    "bio": null,
-    "blog": "",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/Kreonical-genesis",
+    "html_url": "https://github.com/Kreonical-genesis",
+    "followers_url": "https://api.github.com/users/Kreonical-genesis/followers",
+    "following_url": "https://api.github.com/users/Kreonical-genesis/following{/other_user}",
+    "gists_url": "https://api.github.com/users/Kreonical-genesis/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/Kreonical-genesis/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/Kreonical-genesis/subscriptions",
+    "organizations_url": "https://api.github.com/users/Kreonical-genesis/orgs",
+    "repos_url": "https://api.github.com/users/Kreonical-genesis/repos",
+    "events_url": "https://api.github.com/users/Kreonical-genesis/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/Kreonical-genesis/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false,
+    "name": null,
     "company": null,
+    "blog": "",
     "location": null,
+    "email": null,
+    "hireable": null,
+    "bio": null,
+    "twitter_username": null,
     "public_repos": 7,
+    "public_gists": 0,
     "followers": 0,
     "following": 3,
     "created_at": "2024-06-19T16:17:48Z",
-    "html_url": "https://github.com/Kreonical-genesis"
+    "updated_at": "2025-08-02T18:44:53Z"
   },
   "repos": [
     {
@@ -25,25 +45,23 @@
       "stargazers_count": 0,
       "forks_count": 0,
       "open_issues_count": 0,
-      "pushed_at": "2025-08-16T06:43:21Z",
+      "pushed_at": "2025-08-16T21:03:22Z",
       "created_at": "2025-08-01T21:28:18Z",
-      "updated_at": "2025-08-16T06:43:24Z",
-      "size": 1440,
-      "default_branch": "main",
+      "updated_at": "2025-08-16T21:03:26Z",
       "license": null,
       "languages_bytes": {
-        "HTML": 28294,
-        "JavaScript": 19899,
-        "CSS": 16013,
-        "Python": 12910,
-        "Batchfile": 790
+        "HTML": 36740,
+        "Python": 23480,
+        "JavaScript": 16534,
+        "CSS": 14444,
+        "Batchfile": 818
       },
       "contributors": [
         {
           "login": "Kreonical-genesis",
           "avatar_url": "https://avatars.githubusercontent.com/u/173289203?v=4",
           "html_url": "https://github.com/Kreonical-genesis",
-          "contributions": 21
+          "contributions": 22
         }
       ],
       "stargazers_recent": [],
@@ -65,8 +83,6 @@
       "pushed_at": "2025-08-09T12:13:11Z",
       "created_at": "2025-08-08T17:28:46Z",
       "updated_at": "2025-08-09T12:13:14Z",
-      "size": 15,
-      "default_branch": "main",
       "license": null,
       "languages_bytes": {
         "Python": 19870,
@@ -99,8 +115,6 @@
       "pushed_at": "2025-08-02T16:38:36Z",
       "created_at": "2025-07-27T11:29:57Z",
       "updated_at": "2025-08-02T16:38:39Z",
-      "size": 19472,
-      "default_branch": "main",
       "license": null,
       "languages_bytes": {
         "HTML": 14586,
@@ -133,8 +147,6 @@
       "pushed_at": "2025-07-26T10:37:39Z",
       "created_at": "2025-07-26T10:28:17Z",
       "updated_at": "2025-07-26T10:37:43Z",
-      "size": 25160,
-      "default_branch": "master",
       "license": "Other",
       "languages_bytes": {
         "Java": 447708
@@ -178,8 +190,6 @@
       "pushed_at": "2025-06-26T13:42:16Z",
       "created_at": "2025-06-26T13:41:28Z",
       "updated_at": "2025-06-26T13:42:20Z",
-      "size": 6,
-      "default_branch": "master",
       "license": "MIT License",
       "languages_bytes": {
         "Java": 5276
@@ -211,8 +221,6 @@
       "pushed_at": "2025-04-27T18:04:29Z",
       "created_at": "2025-04-23T19:17:02Z",
       "updated_at": "2025-04-27T18:04:32Z",
-      "size": 73,
-      "default_branch": "master",
       "license": null,
       "languages_bytes": {
         "JavaScript": 26555,
@@ -265,8 +273,6 @@
       "pushed_at": "2025-04-26T18:35:53Z",
       "created_at": "2025-04-26T18:35:37Z",
       "updated_at": "2025-04-26T18:35:56Z",
-      "size": 5,
-      "default_branch": "master",
       "license": "MIT License",
       "languages_bytes": {
         "Java": 930
@@ -286,7 +292,725 @@
       "latest_release": null
     }
   ],
+  "commit_activity": [
+    {
+      "week": 1733011200,
+      "total": 0,
+      "days": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "week": 1733014800,
+      "total": 0,
+      "days": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "week": 1733616000,
+      "total": 0,
+      "days": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "week": 1733619600,
+      "total": 0,
+      "days": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "week": 1734220800,
+      "total": 0,
+      "days": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "week": 1734224400,
+      "total": 0,
+      "days": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "week": 1734825600,
+      "total": 0,
+      "days": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "week": 1734829200,
+      "total": 0,
+      "days": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "week": 1735430400,
+      "total": 2,
+      "days": [
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "week": 1735434000,
+      "total": 0,
+      "days": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "week": 1736035200,
+      "total": 0,
+      "days": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "week": 1736038800,
+      "total": 0,
+      "days": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "week": 1736640000,
+      "total": 0,
+      "days": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "week": 1736643600,
+      "total": 0,
+      "days": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "week": 1737244800,
+      "total": 0,
+      "days": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "week": 1737248400,
+      "total": 0,
+      "days": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "week": 1737849600,
+      "total": 0,
+      "days": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "week": 1737853200,
+      "total": 0,
+      "days": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "week": 1738454400,
+      "total": 2,
+      "days": [
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "week": 1738458000,
+      "total": 0,
+      "days": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "week": 1739059200,
+      "total": 2,
+      "days": [
+        0,
+        0,
+        2,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "week": 1739062800,
+      "total": 0,
+      "days": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "week": 1739664000,
+      "total": 1,
+      "days": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "week": 1739667600,
+      "total": 0,
+      "days": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "week": 1740268800,
+      "total": 6,
+      "days": [
+        4,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "week": 1740272400,
+      "total": 0,
+      "days": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "week": 1740873600,
+      "total": 1,
+      "days": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "week": 1740877200,
+      "total": 0,
+      "days": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "week": 1741478400,
+      "total": 1,
+      "days": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "week": 1741482000,
+      "total": 0,
+      "days": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "week": 1742083200,
+      "total": 0,
+      "days": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "week": 1742688000,
+      "total": 4,
+      "days": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        2
+      ]
+    },
+    {
+      "week": 1743292800,
+      "total": 8,
+      "days": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        8
+      ]
+    },
+    {
+      "week": 1743897600,
+      "total": 0,
+      "days": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "week": 1744502400,
+      "total": 0,
+      "days": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "week": 1745107200,
+      "total": 10,
+      "days": [
+        0,
+        0,
+        0,
+        3,
+        3,
+        0,
+        4
+      ]
+    },
+    {
+      "week": 1745712000,
+      "total": 8,
+      "days": [
+        2,
+        0,
+        0,
+        2,
+        4,
+        0,
+        0
+      ]
+    },
+    {
+      "week": 1746316800,
+      "total": 7,
+      "days": [
+        6,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "week": 1746921600,
+      "total": 0,
+      "days": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "week": 1747526400,
+      "total": 0,
+      "days": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "week": 1748131200,
+      "total": 1,
+      "days": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "week": 1748736000,
+      "total": 0,
+      "days": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "week": 1749340800,
+      "total": 3,
+      "days": [
+        0,
+        0,
+        1,
+        2,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "week": 1749945600,
+      "total": 0,
+      "days": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "week": 1750550400,
+      "total": 2,
+      "days": [
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "week": 1751155200,
+      "total": 0,
+      "days": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "week": 1751760000,
+      "total": 2,
+      "days": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "week": 1752364800,
+      "total": 0,
+      "days": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "week": 1752969600,
+      "total": 2,
+      "days": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2
+      ]
+    },
+    {
+      "week": 1753574400,
+      "total": 24,
+      "days": [
+        7,
+        0,
+        2,
+        0,
+        0,
+        0,
+        15
+      ]
+    },
+    {
+      "week": 1754179200,
+      "total": 13,
+      "days": [
+        2,
+        3,
+        1,
+        0,
+        0,
+        5,
+        2
+      ]
+    },
+    {
+      "week": 1754784000,
+      "total": 2,
+      "days": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1
+      ]
+    }
+  ],
   "events": [
+    {
+      "id": "53447289608",
+      "type": "PushEvent",
+      "actor": {
+        "id": 173289203,
+        "login": "Kreonical-genesis",
+        "display_login": "Kreonical-genesis",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/Kreonical-genesis",
+        "avatar_url": "https://avatars.githubusercontent.com/u/173289203?"
+      },
+      "repo": {
+        "id": 1030562672,
+        "name": "Kreonical-genesis/Kreonical-genesis",
+        "url": "https://api.github.com/repos/Kreonical-genesis/Kreonical-genesis"
+      },
+      "payload": {
+        "repository_id": 1030562672,
+        "push_id": 26180132193,
+        "size": 1,
+        "distinct_size": 1,
+        "ref": "refs/heads/main",
+        "head": "58fcca556f9eb56b7850af4bfafb1deca1d1352f",
+        "before": "baceb3049370f786d9854e3d73e654241d470a73",
+        "commits": [
+          {
+            "sha": "58fcca556f9eb56b7850af4bfafb1deca1d1352f",
+            "author": {
+              "email": "kreogen20066@gmail.com",
+              "name": "Kreonical-genesis"
+            },
+            "message": "new github",
+            "distinct": true,
+            "url": "https://api.github.com/repos/Kreonical-genesis/Kreonical-genesis/commits/58fcca556f9eb56b7850af4bfafb1deca1d1352f"
+          }
+        ]
+      },
+      "public": true,
+      "created_at": "2025-08-16T21:03:24Z"
+    },
     {
       "id": "53436229916",
       "type": "PushEvent",
@@ -1410,724 +2134,6 @@
       },
       "public": true,
       "created_at": "2025-08-01T22:22:21Z"
-    },
-    {
-      "id": "52854243570",
-      "type": "PushEvent",
-      "actor": {
-        "id": 173289203,
-        "login": "Kreonical-genesis",
-        "display_login": "Kreonical-genesis",
-        "gravatar_id": "",
-        "url": "https://api.github.com/users/Kreonical-genesis",
-        "avatar_url": "https://avatars.githubusercontent.com/u/173289203?"
-      },
-      "repo": {
-        "id": 1030562672,
-        "name": "Kreonical-genesis/Kreonical-genesis",
-        "url": "https://api.github.com/repos/Kreonical-genesis/Kreonical-genesis"
-      },
-      "payload": {
-        "repository_id": 1030562672,
-        "push_id": 25879111459,
-        "size": 1,
-        "distinct_size": 1,
-        "ref": "refs/heads/main",
-        "head": "7f87ff8dcec560e86237cef354a42ab66630988a",
-        "before": "c15da0bdf5f0da5cf40a62c918b1f6ad72eeb406",
-        "commits": [
-          {
-            "sha": "7f87ff8dcec560e86237cef354a42ab66630988a",
-            "author": {
-              "email": "kreogen20066@gmail.com",
-              "name": "Kreonical-genesis"
-            },
-            "message": "added mobile changes",
-            "distinct": true,
-            "url": "https://api.github.com/repos/Kreonical-genesis/Kreonical-genesis/commits/7f87ff8dcec560e86237cef354a42ab66630988a"
-          }
-        ]
-      },
-      "public": true,
-      "created_at": "2025-08-01T22:10:09Z"
-    }
-  ],
-  "commit_activity": [
-    {
-      "week": 1733011200,
-      "total": 0,
-      "days": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ]
-    },
-    {
-      "week": 1733014800,
-      "total": 0,
-      "days": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ]
-    },
-    {
-      "week": 1733616000,
-      "total": 0,
-      "days": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ]
-    },
-    {
-      "week": 1733619600,
-      "total": 0,
-      "days": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ]
-    },
-    {
-      "week": 1734220800,
-      "total": 0,
-      "days": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ]
-    },
-    {
-      "week": 1734224400,
-      "total": 0,
-      "days": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ]
-    },
-    {
-      "week": 1734825600,
-      "total": 0,
-      "days": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ]
-    },
-    {
-      "week": 1734829200,
-      "total": 0,
-      "days": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ]
-    },
-    {
-      "week": 1735430400,
-      "total": 2,
-      "days": [
-        2,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ]
-    },
-    {
-      "week": 1735434000,
-      "total": 0,
-      "days": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ]
-    },
-    {
-      "week": 1736035200,
-      "total": 0,
-      "days": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ]
-    },
-    {
-      "week": 1736038800,
-      "total": 0,
-      "days": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ]
-    },
-    {
-      "week": 1736640000,
-      "total": 0,
-      "days": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ]
-    },
-    {
-      "week": 1736643600,
-      "total": 0,
-      "days": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ]
-    },
-    {
-      "week": 1737244800,
-      "total": 0,
-      "days": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ]
-    },
-    {
-      "week": 1737248400,
-      "total": 0,
-      "days": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ]
-    },
-    {
-      "week": 1737849600,
-      "total": 0,
-      "days": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ]
-    },
-    {
-      "week": 1737853200,
-      "total": 0,
-      "days": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ]
-    },
-    {
-      "week": 1738454400,
-      "total": 2,
-      "days": [
-        2,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ]
-    },
-    {
-      "week": 1738458000,
-      "total": 0,
-      "days": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ]
-    },
-    {
-      "week": 1739059200,
-      "total": 2,
-      "days": [
-        0,
-        0,
-        2,
-        0,
-        0,
-        0,
-        0
-      ]
-    },
-    {
-      "week": 1739062800,
-      "total": 0,
-      "days": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ]
-    },
-    {
-      "week": 1739664000,
-      "total": 1,
-      "days": [
-        0,
-        0,
-        1,
-        0,
-        0,
-        0,
-        0
-      ]
-    },
-    {
-      "week": 1739667600,
-      "total": 0,
-      "days": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ]
-    },
-    {
-      "week": 1740268800,
-      "total": 6,
-      "days": [
-        4,
-        1,
-        0,
-        0,
-        0,
-        0,
-        1
-      ]
-    },
-    {
-      "week": 1740272400,
-      "total": 0,
-      "days": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ]
-    },
-    {
-      "week": 1740873600,
-      "total": 1,
-      "days": [
-        0,
-        0,
-        1,
-        0,
-        0,
-        0,
-        0
-      ]
-    },
-    {
-      "week": 1740877200,
-      "total": 0,
-      "days": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ]
-    },
-    {
-      "week": 1741478400,
-      "total": 1,
-      "days": [
-        0,
-        0,
-        0,
-        1,
-        0,
-        0,
-        0
-      ]
-    },
-    {
-      "week": 1741482000,
-      "total": 0,
-      "days": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ]
-    },
-    {
-      "week": 1742083200,
-      "total": 0,
-      "days": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ]
-    },
-    {
-      "week": 1742688000,
-      "total": 4,
-      "days": [
-        0,
-        0,
-        0,
-        0,
-        1,
-        1,
-        2
-      ]
-    },
-    {
-      "week": 1743292800,
-      "total": 8,
-      "days": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        8
-      ]
-    },
-    {
-      "week": 1743897600,
-      "total": 0,
-      "days": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ]
-    },
-    {
-      "week": 1744502400,
-      "total": 0,
-      "days": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ]
-    },
-    {
-      "week": 1745107200,
-      "total": 10,
-      "days": [
-        0,
-        0,
-        0,
-        3,
-        3,
-        0,
-        4
-      ]
-    },
-    {
-      "week": 1745712000,
-      "total": 8,
-      "days": [
-        2,
-        0,
-        0,
-        2,
-        4,
-        0,
-        0
-      ]
-    },
-    {
-      "week": 1746316800,
-      "total": 7,
-      "days": [
-        6,
-        0,
-        0,
-        0,
-        0,
-        0,
-        1
-      ]
-    },
-    {
-      "week": 1746921600,
-      "total": 0,
-      "days": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ]
-    },
-    {
-      "week": 1747526400,
-      "total": 0,
-      "days": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ]
-    },
-    {
-      "week": 1748131200,
-      "total": 1,
-      "days": [
-        0,
-        0,
-        0,
-        1,
-        0,
-        0,
-        0
-      ]
-    },
-    {
-      "week": 1748736000,
-      "total": 0,
-      "days": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ]
-    },
-    {
-      "week": 1749340800,
-      "total": 3,
-      "days": [
-        0,
-        0,
-        1,
-        2,
-        0,
-        0,
-        0
-      ]
-    },
-    {
-      "week": 1749945600,
-      "total": 0,
-      "days": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ]
-    },
-    {
-      "week": 1750550400,
-      "total": 2,
-      "days": [
-        0,
-        1,
-        0,
-        0,
-        1,
-        0,
-        0
-      ]
-    },
-    {
-      "week": 1751155200,
-      "total": 0,
-      "days": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ]
-    },
-    {
-      "week": 1751760000,
-      "total": 2,
-      "days": [
-        0,
-        0,
-        1,
-        0,
-        1,
-        0,
-        0
-      ]
-    },
-    {
-      "week": 1752364800,
-      "total": 0,
-      "days": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ]
-    },
-    {
-      "week": 1752969600,
-      "total": 2,
-      "days": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        2
-      ]
-    },
-    {
-      "week": 1753574400,
-      "total": 24,
-      "days": [
-        7,
-        0,
-        2,
-        0,
-        0,
-        0,
-        15
-      ]
-    },
-    {
-      "week": 1754179200,
-      "total": 13,
-      "days": [
-        2,
-        3,
-        1,
-        0,
-        0,
-        5,
-        2
-      ]
-    },
-    {
-      "week": 1754784000,
-      "total": 2,
-      "days": [
-        0,
-        0,
-        0,
-        1,
-        0,
-        0,
-        1
-      ]
     }
   ]
 }

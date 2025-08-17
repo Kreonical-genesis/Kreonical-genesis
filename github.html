@@ -5,32 +5,49 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Kreonical — GitHub</title>
 
-  <!-- Основные стили страницы GitHub-витрины -->
+  <!-- Стили -->
   <link rel="stylesheet" href="css/github.css" />
+  <link rel="stylesheet" href="css/page.css" />
 
-  <!-- Пара советов SEO / шаринга (необязательно) -->
   <meta name="description" content="Портфолио GitHub: репозитории, активность, языки, контрибьюторы, статистика." />
   <meta property="og:title" content="GitHub — Kreonical" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="assets/avatar.png" />
 </head>
 <body>
-  <!-- Шапка: поиск, фильтр по языку, сортировка -->
+
   <header class="gh-header">
     <div class="brand">Kreonical — GitHub</div>
+    <nav class="nav-bar">
+      <button class="nav-button" data-target="builds.html">
+        <span class="nav-icon" style="background-image: url('assets/icons/builds.png');"></span>Постройки
+      </button>
+      <button class="nav-button" data-target="rp.html">
+        <span class="nav-icon" style="background-image: url('assets/icons/rp.png');"></span>Ресурспаки
+      </button>
+      <button class="nav-button" data-target="index.html">
+        <span class="nav-icon" style="background-image: url('assets/icons/home.png');"></span>Главная
+      </button>
+      <button class="nav-button" data-target="blockbench.html">
+        <span class="nav-icon" style="background-image: url('assets/icons/models.png');"></span>Модели
+      </button>
+      <button class="nav-button" data-target="github.html" data-page="true">
+        <span class="nav-icon" style="background-image: url('assets/icons/code.png');"></span>Программирование
+      </button>
+    </nav>
     <div class="controls">
       <!-- Поиск по названию/описанию репо -->
       <input id="search" class="control-input" type="search"
              placeholder="Поиск по репозиториям…" aria-label="Поиск по репозиториям" />
 
-      <!-- Фильтр по языку: наполняется из JSON -->
+      <!-- Фильтр по языку -->
       <select id="filter-language" class="control-input" aria-label="Фильтр по языку">
         <option value="">Все языки</option>
       </select>
 
-      <!-- Сортировка списка репозиториев -->
+      <!-- Сортировка -->
       <select id="sort" class="control-input" aria-label="Сортировка репозиториев">
-        <option value="updated_desc">Обновлённые (сначала новые)</option>
+        <option value="updated_desc">Обновлённые (новые)</option>
         <option value="stars_desc">Звёзды (по убыв.)</option>
         <option value="created_desc">Новые репозитории</option>
         <option value="size_desc">Размер (по убыв.)</option>
@@ -39,211 +56,103 @@
     </div>
   </header>
 
-  <!-- data-username: укажи свой ник на GitHub; JS берёт отсюда имя JSON-файла -->
-  <main id="app" data-username="kreonical-genesis">
-    <!-- ЛЕВАЯ КОЛОНКА: профиль, избранное, быстрые метрики -->
-    <aside class="profile-pane" aria-label="Профиль GitHub">
-      <!-- Аватар с «скелетоном» на время загрузки -->
-      <div class="avatar-wrap">
-        <div class="avatar-skeleton skeleton"></div>
-        <!-- JS подставит реальный avatar_url и уберёт класс hidden -->
-        <img id="gh-avatar" class="avatar hidden" src="assets/avatar.png" alt="Аватар пользователя GitHub" />
-      </div>
+  <!-- ======= ОСНОВНОЙ КОНТЕЙНЕР: ТРИ КОЛОНКИ ======= -->
+  <main id="app" data-username="kreonical-genesis" class="gh-layout">
 
-      <!-- Имя/логин/био -->
-      <h2 id="gh-name" class="text-skeleton skeleton">Имя</h2>
-      <p id="gh-login" class="text-skeleton skeleton">@login</p>
-      <p id="gh-bio" class="bio text-skeleton skeleton">Bio пользователя…</p>
+    <!-- ЛЕВАЯ КОЛОНКА: профиль -->
+    <aside class="gh-left">
+      <section id="gh-profile" class="card">
+        <div class="avatar-wrap">
+          <div class="avatar-skeleton skeleton"></div>
+          <img id="gh-avatar" class="avatar hidden" src="assets/avatar.png" alt="Аватар пользователя" />
+        </div>
+        <h2 id="gh-name" class="text-skeleton skeleton">Имя</h2>
+        <p id="gh-login" class="text-skeleton skeleton">@login</p>
+        <p id="gh-bio" class="bio text-skeleton skeleton">Bio пользователя…</p>
 
-      <!-- Короткая статистика профиля -->
-      <div class="stats" aria-label="Статистика профиля">
-        <div><strong id="gh-repos-count">0</strong><span>репозиториев</span></div>
-        <div><strong id="gh-followers">0</strong><span>подписчиков</span></div>
-        <div><strong id="gh-following">0</strong><span>подписок</span></div>
-      </div>
+        <div class="stats">
+          <div><strong id="gh-repos-count">0</strong><span>репозиториев</span></div>
+          <div><strong id="gh-followers">0</strong><span>подписчиков</span></div>
+          <div><strong id="gh-following">0</strong><span>подписок</span></div>
+        </div>
 
-      <!-- Кнопка перехода в профиль -->
-      <div class="profile-actions">
-        <a id="gh-profile-link" class="btn" href="#" target="_blank" rel="noopener">Открыть в GitHub</a>
-      </div>
+        <div class="profile-actions">
+          <a id="gh-profile-link" class="btn" href="#" target="_blank" rel="noopener">Открыть в GitHub</a>
+        </div>
+      </section>
 
-      <!-- Избранные репозитории (пины): JS возьмёт топ-4 по звёздам -->
-      <div class="pinned" id="pinned-block">
+      <section class="card" id="pinned-block">
         <h4>Избранное</h4>
-        <div id="pinned-list" class="pinned-list" aria-live="polite">
-          <div class="pinned-skeleton skeleton"></div>
+        <div id="pinned-list" class="pinned-list">
           <div class="pinned-skeleton skeleton"></div>
           <div class="pinned-skeleton skeleton"></div>
         </div>
-      </div>
+      </section>
 
-      <!-- Быстрые метрики по всем репозиториям -->
-      <div class="quick-stats card">
+      <section class="quick-stats card">
         <h4>Быстрые метрики</h4>
-        <ul class="qs-list" id="quick-stats">
-          <!-- Заполняется JS: всего репо, всего ⭐/🍴, средние, топ-язык и т.п. -->
-        </ul>
-      </div>
+        <ul class="qs-list" id="quick-stats"></ul>
+      </section>
     </aside>
 
-    <!-- ПРАВАЯ КОЛОНКА: языки, активность, репозитории -->
-    <section class="content">
-      <section class="top-row">
-        <!-- Блок ЯЗЫКОВ: важное изменение — процент выводим в лейбле слева -->
-        <div class="lang-chart card" aria-label="Распределение языков">
-          <h3>Языки (сумма по репозиториям)</h3>
-
-          <!-- ВАЖНО: внутрь .lang-row JS подставляет:
-               .lang-label  → "Java • 74.6%"
-               .lang-bar    → только цветная полоса (без текста)
-               Так даже малые проценты будут читаться. -->
-          <div id="lang-bars" class="lang-bars">
-            <!-- Скелетоны на время загрузки -->
-            <div class="lang-row">
-              <div class="lang-label skeleton text-skeleton"></div>
-              <div class="lang-bar-wrap">
-                <div class="lang-bar skeleton"></div>
-              </div>
-            </div>
-            <div class="lang-row">
-              <div class="lang-label skeleton text-skeleton"></div>
-              <div class="lang-bar-wrap">
-                <div class="lang-bar skeleton"></div>
-              </div>
-            </div>
-            <div class="lang-row">
-              <div class="lang-label skeleton text-skeleton"></div>
-              <div class="lang-bar-wrap">
-                <div class="lang-bar skeleton"></div>
-              </div>
-            </div>
+    <!-- ЦЕНТРАЛЬНАЯ КОЛОНКА: языки, heatmap -->
+    <section class="gh-center">
+      <section id="gh-languages" class="card">
+        <h3>Языки</h3>
+        <div id="lang-bars" class="lang-bars">
+          <div class="lang-row">
+            <div class="lang-label skeleton text-skeleton"></div>
+            <div class="lang-bar-wrap"><div class="lang-bar skeleton"></div></div>
           </div>
-        </div>
-
-        <!-- АКТИВНОСТЬ: добавляем панель фильтров по типам событий -->
-        <div class="activity card" aria-label="Последние события">
-          <h3>Активность (последние события)</h3>
-
-          <!-- Панель фильтров активности.
-               JS повесит обработчики и будет фильтровать список ниже. -->
-          <div class="activity-filters" role="group" aria-label="Фильтр событий">
-            <select id="activity-type" class="control-input" aria-label="Тип событий">
-              <!-- значение "" = все события -->
-              <option value="">Все типы</option>
-              <option value="PushEvent">Push</option>
-              <option value="PullRequestEvent">Pull Request</option>
-              <option value="IssuesEvent">Issues</option>
-              <option value="IssueCommentEvent">Issue comments</option>
-              <option value="CreateEvent">Create</option>
-              <option value="ForkEvent">Fork</option>
-              <option value="WatchEvent">Watch/Star</option>
-              <option value="ReleaseEvent">Release</option>
-            </select>
-
-            <!-- Поиск по имени репозитория внутри ленты событий -->
-            <input id="activity-search" class="control-input" type="search"
-                   placeholder="Фильтр по репозиторию…" aria-label="Поиск по репозиторию в событиях" />
-          </div>
-
-          <!-- Список событий. JS будет перерисовывать по фильтрам. -->
-          <ul id="activity-list" class="activity-list" aria-live="polite">
-            <li class="activity-item skeleton"></li>
-            <li class="activity-item skeleton"></li>
-            <li class="activity-item skeleton"></li>
-          </ul>
         </div>
       </section>
 
-      <!-- НЕБОЛЬШАЯ HEATMAP вкладов за год (кастомная).
-           JS построит сетку из /stats/commit_activity данных. -->
-      <section class="card" id="heatmap-card" aria-label="Карта вкладов за год">
-        <div class="heatmap-header">
-          <h3>Активность по дням (за год)</h3>
-          <!-- Переключатель года: JS наполнит доступные года (например, текущий/прошлый) -->
-          <select id="heatmap-year" class="control-input" aria-label="Год">
-            <option value="auto">Текущий год</option>
-          </select>
-        </div>
-
-        <!-- Контейнер heatmap: сюда JS отрисует мини-календарь (квадратики/кружки) -->
-        <div id="heatmap" class="heatmap" aria-hidden="false">
-          <!-- Можем оставить пустым: всё делается скриптом -->
-        </div>
-
-        <!-- Подписи/легенда heatmap -->
-        <div class="heatmap-legend" id="heatmap-legend" aria-hidden="false">
-          <!-- JS подставит градации интенсивности -->
-        </div>
+      <section id="gh-heatmap" class="card">
+        <h3>Активность по дням</h3>
+        <select id="heatmap-year" class="control-input"><option value="auto">Текущий год</option></select>
+        <div id="heatmap" class="heatmap"></div>
+        <div class="heatmap-legend" id="heatmap-legend"></div>
       </section>
 
-      <!-- СПИСОК РЕПОЗИТОРИЕВ -->
-      <section class="repos card" aria-label="Список репозиториев">
-        <div class="repos-header">
-          <h3>Репозитории</h3>
-          <!-- Итоги по текущей выборке (после поиска/фильтров/сортировки) -->
-          <div class="repo-counters" id="repo-counters"></div>
-        </div>
-
-        <!-- Сетка карточек репозиториев -->
-        <div id="repos-grid" class="repos-grid">
-          <!-- ВАЖНО: структура карточки, которую будет собирать JS.
-               Ниже — ориентировочный шаблон (для понимания), реальный рендер — в github.js:
-
-          <div class="repo-card">
-            <a class="repo-name" href="..." target="_blank" rel="noopener">my-repo</a>
-            <div class="repo-desc">Короткое описание…</div>
-
-            <div class="repo-meta">
-              <span class="repo-tag">Java</span>
-              <span class="repo-tag">#minecraft</span>
-
-              <span class="repo-stats">⭐ 10  🍴 2</span>
-            </div>-->
-
-            <!-- Блок бейджей (issues/PR/releases). Заполняется JS. -->
-            <div class="repo-badges">
-              <span class="repo-badge">❗ 3</span>
-              <span class="repo-badge">🔀 1</span>
-              <span class="repo-badge">📦 2</span>
-              <span class="repo-badge repo-badge--muted">release: v1.2 • 2024-05-01</span>
-            </div>
-
-            <!-- ТОП-3 КОНТРИБЬЮТОРА: круглые аватарки с ссылками на профили -->
-            <div class="repo-contrib" aria-label="Контрибьюторы">
-              <a href="https://github.com/user1" class="contrib" title="user1" target="_blank" rel="noopener">
-                <img src="..." alt="user1" />
-              </a>
-              <a href="https://github.com/user2" class="contrib" title="user2" target="_blank" rel="noopener">
-                <img src="..." alt="user2" />
-              </a>
-              <a href="https://github.com/user3" class="contrib" title="user3" target="_blank" rel="noopener">
-                <img src="..." alt="user3" />
-              </a>
-            </div>
-
-            <!-- ПОСЛЕДНИЕ STARGAZERS: маленькие аватарки + общий счётчик -->
-            <div class="repo-stars" aria-label="Недавние звёзды">
-              <div class="stars-avatars">
-                <a href="https://github.com/s1" class="star" title="s1" target="_blank" rel="noopener">
-                  <img src="..." alt="s1" />
-                </a>
-                <a href="https://github.com/s2" class="star" title="s2" target="_blank" rel="noopener">
-                  <img src="..." alt="s2" />
-                </a>
-              </div>
-              <div class="stars-count">+2 недавно</div>
-            </div>
-
-            <div class="repo-updated">Обновлён: 01.08.2025</div>
-          </div>
-
-          -->
-        </div>
+      <section id="gh-stats" class="card">
+        <h3>Общая статистика</h3>
+        <ul id="stats-list"></ul>
       </section>
     </section>
+
+    <!-- ПРАВАЯ КОЛОНКА: репозитории -->
+    <section class="gh-right">
+      <section class="repos card">
+        <div class="repos-header">
+          <h3>Репозитории</h3>
+          <div id="repo-counters"></div>
+        </div>
+        <div id="repos-grid" class="repos-grid"></div>
+      </section>
+    </section>
+
+    <!-- НИЖНИЙ БЛОК: последняя активность -->
+    <section id="gh-activity" class="gh-activity card">
+      <h2>Последние события</h2>
+      <div class="activity-filters">
+        <select id="activity-type" class="control-input">
+          <option value="">Все</option>
+          <option value="PushEvent">Push</option>
+          <option value="PullRequestEvent">Pull Request</option>
+          <option value="IssuesEvent">Issues</option>
+          <option value="ReleaseEvent">Release</option>
+        </select>
+        <input id="activity-search" class="control-input" type="search"
+               placeholder="Фильтр по репозиторию…" />
+      </div>
+      <ul id="activity-list" class="activity-list">
+        <li class="activity-item skeleton"></li>
+      </ul>
+    </section>
+
   </main>
 
-  <!-- Логика страницы -->
   <script src="js/github.js"></script>
+  <script src="js/pixel_nav.js"></script>
 </body>
 </html>
